@@ -6,6 +6,7 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Project;
+use App\Image;
 
 class User extends Authenticatable
 {
@@ -42,5 +43,10 @@ class User extends Authenticatable
 
     public function projects(){
         return $this->hasMany(Project::class);
+    }
+
+    // Relation one to one polymorphic with Image
+    public function image(){
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

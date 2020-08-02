@@ -16,10 +16,13 @@ class CreateImagesTable extends Migration
         Schema::create('images', function (Blueprint $table) {
             $table->id();
             $table->string('path');
-            $table->bigInteger('project_id')->unsigned();
+            // $table->bigInteger('project_id')->unsigned();
             $table->timestamps();
 
-            $table->foreign('project_id')->references('id')->on('projects');
+            // $table->foreign('project_id')->references('id')->on('projects');
+
+            // Creando una relación polimorfica para agregar imagenes a User y a Project
+            $table->morphs('imageable');
         });
     }
 

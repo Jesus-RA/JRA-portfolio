@@ -12,7 +12,12 @@ class Image extends Model
         'path'
     ];
 
-    public function project(){
-        return $this->belongsTo(Project::class);
+    // Relation one to many with Project
+    // public function project(){
+    //     return $this->belongsTo(Project::class);
+    // }
+
+    public function imageable(){
+        return $this->morphTo();
     }
 }

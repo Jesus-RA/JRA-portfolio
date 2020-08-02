@@ -21,11 +21,17 @@ class Project extends Model
         return $this->belongsToMany(Technology::class);
     }
 
-    public function images(){
-        return $this->hasMany(Image::class);
-    }
+    // Relation one to many with Image
+    // public function images(){
+    //     return $this->hasMany(Image::class);
+    // }
 
     public function user(){
         return $this->belongsTo(User::class);
+    }
+
+    // Relation one to many polymorphic with Image
+    public function images(){
+        return $this->morphMany(Image::class, 'imageable');
     }
 }
