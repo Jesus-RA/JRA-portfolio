@@ -15,9 +15,7 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
-        $firstImage = $projects[0]->images;
-        $firstImage = $firstImage[0]->path;
-        return view('projects.index', compact('projects', 'firstImage'));
+        return view('projects.index', compact('projects'));        
     }
 
     /**

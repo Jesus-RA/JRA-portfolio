@@ -3,7 +3,7 @@
         <div class="carousel-inner">
             @for ($i = 0, $image = $project->images; $i < sizeof($image); $i++)
                 <div class="carousel-item {{$i==0 ? 'active': ''}}">
-                    <img src="{{$image[$i]->path}}" class="d-block w-100" alt="{{$image[$i]->path}}" style="max-height: 400px;">
+                    <img src="{{asset($image[$i]->path)}}" class="d-block w-100" alt="{{$image[$i]->path}}" style="max-height: 400px;">
                 </div>                    
             @endfor
         </div>

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="row">
+    <div class="row py-4">
         @empty($projects)
             <div class="alert alert-dark text-center col-md-6">
                 There is no projects yet.

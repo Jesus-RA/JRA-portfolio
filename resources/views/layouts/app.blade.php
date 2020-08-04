@@ -21,12 +21,12 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-transparent shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
+                <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -40,6 +40,15 @@
                     <ul class="navbar-nav ml-auto">
                         <li class="nav-item">
                             <a href="{{route('projects.index')}}" class="nav-link">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            {{-- <a href="{{route('about')}}" class="nav-link"> --}}
+                            <a href="#about" class="nav-link">About</a>
+                                {{-- About --}}
+                            {{-- </a> --}}
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
                         </li>
                         <!-- Authentication Links -->
                         @guest
@@ -75,7 +84,8 @@
             </div>
         </nav>
 
-        <main class="py-4">
+        <main class="">
+            @yield('image-hero')
             <div class="container">
                 @yield('content')
             </div>

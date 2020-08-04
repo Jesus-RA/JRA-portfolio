@@ -71,9 +71,10 @@ body {
   font-weight: 400;
   line-height: 1.6;
   color: #212529;
+  /* color: white; */
   text-align: left;
-  background-color: #f8fafc;
-  /* background-color: rgba(0,0,0); */
+  /* background-color: #f8fafc; */
+  background-color: rgba(0,0,0);
 }
 
 [tabindex="-1"]:focus:not(:focus-visible) {
@@ -171,13 +172,17 @@ sup {
 }
 
 a {
-  color: #3490dc;
+  /* color: #3490dc; */
+  color: white;
   text-decoration: none;
   background-color: transparent;
 }
 
 a:hover {
-  color: #1d68a7;
+  /* color: #1d68a7; */
+  color: black;
+  background-color: rgba(255,255,255,0.5);
+  border-radius: 3px;
   text-decoration: underline;
 }
 
@@ -10929,3 +10934,66 @@ a.text-dark:focus {
   }
 }
 
+@media (min-width: 1200px){
+  .myAbout{
+    height: 100vh;
+  }
+
+  .myContact{
+    height: 100vh;
+  }
+
+  .myPortfolio{
+    height: 100vh;
+  }
+}
+
+@media (max-width: 768px){
+  .myContact{
+    margin-bottom: 50px;
+  }
+}
+
+.myPhoto{
+  opacity: 0.3;
+  transition: ease-in-out 1s;
+}
+
+.myPhoto:hover{
+  opacity: 1;
+}
+
+.myForm{
+  background-color: transparent;
+  margin-bottom: 50px;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 1px solid var(--gray-dark);
+  width: 100%;
+  outline: 0;
+}
+
+.myForm:focus{
+  background-color: transparent;
+  padding: 10px;
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+.myTextarea{
+  resize: none;
+}
+
+.myCard{
+  opacity: 0.5;
+  padding: 50px 0;
+  color: white;
+  background-color: transparent;
+  transition: ease-in-out 0.4s;  
+}
+
+.myCard:hover{
+  opacity: 1;
+}
