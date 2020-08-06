@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use App\Project;
 use App\Image;
+use App\Technology;
 
 class User extends Authenticatable
 {
@@ -48,5 +49,9 @@ class User extends Authenticatable
     // Relation one to one polymorphic with Image
     public function image(){
         return $this->morphOne(Image::class, 'imageable');
+    }
+
+    public function technologies(){
+        return $this->morphToMany(Technology::class, 'technologable');
     }
 }

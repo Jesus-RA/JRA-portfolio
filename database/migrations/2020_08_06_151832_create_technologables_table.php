@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateProjectTechnologyTable extends Migration
+class CreateTechnologablesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateProjectTechnologyTable extends Migration
      */
     public function up()
     {
-        Schema::create('project_technology', function (Blueprint $table) {
-            $table->bigInteger('project_id')->unsigned();
+        Schema::create('technologables', function (Blueprint $table) {
             $table->bigInteger('technology_id')->unsigned();
+            
+            $table->morphs('technologable');
 
-            $table->foreign('project_id')->references('id')->on('projects');
             $table->foreign('technology_id')->references('id')->on('technologies');
         });
     }
@@ -29,6 +29,6 @@ class CreateProjectTechnologyTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('project_technology');
+        Schema::dropIfExists('technologables');
     }
 }

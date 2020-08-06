@@ -3,7 +3,7 @@
 @section('image-hero')
     <div class="hero-image py-0 border-danger">
         {{-- Si quiero el nav sobre la imagen, debo dejar éste y quitar el de app.blade.php --}}
-        {{-- <nav class="navbar navbar-expand-md navbar-dark bg-transparent shadow-sm">
+        {{-- <nav class="navbar navbar-expand-md navbar-dark bg-transparent fixed-top shadow-sm">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -24,9 +24,12 @@
                             <a href="{{route('projects.index')}}" class="nav-link">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{route('about')}}" class="nav-link">
+                            <a href="#about" class="nav-link">
                                 About
                             </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#contact" class="nav-link">Contact</a>
                         </li>
                         <!-- Authentication Links -->
                         @guest

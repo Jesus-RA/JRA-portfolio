@@ -9,13 +9,8 @@ class Image extends Model
 {
 
     protected $fillable = [
-        'path'
+        'path',
     ];
-
-    // Relation one to many with Project
-    // public function project(){
-    //     return $this->belongsTo(Project::class);
-    // }
 
     public function imageable(){
         return $this->morphTo();

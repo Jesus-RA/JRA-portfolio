@@ -8,10 +8,14 @@ use App\Project;
 class Technology extends Model
 {
     protected $fillable = [
-        'name'
+        'name',
     ];
 
     public function projects(){
-        return $this->belongsToMany(Project::class);
+        return $this->morphedByMany(Project::class, 'technologable');
+    }
+
+    public function users(){
+        return $this->morphedByMany(User::class, 'technologable');
     }
 }

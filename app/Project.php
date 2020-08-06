@@ -18,13 +18,8 @@ class Project extends Model
     ];
 
     public function technologies(){
-        return $this->belongsToMany(Technology::class);
+        return $this->morphToMany(Technology::class, 'technologable');
     }
-
-    // Relation one to many with Image
-    // public function images(){
-    //     return $this->hasMany(Image::class);
-    // }
 
     public function user(){
         return $this->belongsTo(User::class);
