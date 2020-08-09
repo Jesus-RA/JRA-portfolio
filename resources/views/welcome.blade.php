@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('image-hero')
+@section('content')
     <div class="hero-image py-0 border-danger">
         {{-- Si quiero el nav sobre la imagen, debo dejar éste y quitar el de app.blade.php --}}
         {{-- <nav class="navbar navbar-expand-md navbar-dark bg-transparent fixed-top shadow-sm">
@@ -67,7 +67,7 @@
         <div class="text-hero">
             <h1>Jesús Ramírez Alejandro</h1>
             <h3>Web Developer</h3>
-            <button class="btn btn-dark btn-block">Hire me!</button>
+            <button class="btn btn-outline-light btn-block">Hire me!</button>
         </div>
     </div>
     <div class="container">

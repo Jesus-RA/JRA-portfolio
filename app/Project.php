@@ -9,6 +9,10 @@ use App\User;
 
 class Project extends Model
 {
+    protected $with = [
+        'images',
+    ];
+
     protected $fillable = [
         'name',
         'description',

@@ -1,32 +1,26 @@
-<div class="card">
+<div class="card bg-dark text-white border border-secondary myPhoto">
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
             @for ($i = 0, $image = $project->images; $i < sizeof($image); $i++)
                 <div class="carousel-item {{$i==0 ? 'active': ''}}">
-                    <img src="{{asset($image[$i]->path)}}" class="d-block w-100 card-img-top" alt="{{$image[$i]->path}}" style="max-height: 350px;">
+                    <img src="{{asset($image[$i]->path)}}" class="d-block w-100 card-img-top" alt="{{$image[$i]->path}}" height="200">
                 </div>                    
             @endfor
         </div>
-        {{-- <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev"> --}}
-            {{-- <span class="carousel-control-prev-icon" aria-hidden="true"></span> --}}
-            <span class="sr-only">Previous</span>
-        {{-- </a> --}}
-        {{-- <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next"> --}}
-            {{-- <span class="carousel-control-next-icon" aria-hidden="true"></span> --}}
-            <span class="sr-only">Next</span>
-        {{-- </a> --}}
+        <span class="sr-only">Previous</span>
+        <span class="sr-only">Next</span>
     </div>
     
     <div class="card-body">
-        <h4>{{$project->name}}</h4>
-        <p>
-            <span>Description: </span>{{$project->description}}
-        </p>
-        <p>
+        <h4 class="card-title text-center">{{$project->name}}</h4>
+        <button type="button" class="btn btn-outline-secondary text-white btn-block">See project</button>
+        {{-- <p>
             <span>Technologies: </span>
             @foreach ($project->technologies as $technology)
-                {{$technology->name}}
+                <span class="badge badge-pill badge-dark">
+                    {{$technology->name}}
+                </span>
             @endforeach
-        </p>
+        </p> --}}
     </div>
 </div>

@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
     {
         $technologies = factory(Technology::class, 10)->create();        
 
-        $users = factory(User::class, 10)
+        $users = factory(User::class, 5)
             ->create()
             ->each(function ($user) use($technologies){
                 $user->technologies()->saveMany($technologies->random(mt_rand(2,8)));
@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
                 $user->image()->save(factory(Image::class)->make());
             });
 
-        $projects = factory(Project::class, 30)
+        $projects = factory(Project::class, 7)
             ->make()
             ->each(function ($project) use($users, $technologies){
                 $project->owner_id = $users->random()->id;

@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Panel;
 
+use App\Http\Controllers\Controller;
 use App\Project;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('projects.create');
     }
 
     /**
@@ -36,7 +37,11 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if($request->hasFile('image')){
+            $image = $request->file('image')->store('public');
+            return redirect()->back()->withSuccess($image);
+        }
+        return redirect()->back();
     }
 
     /**
@@ -47,7 +52,7 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        return view('projects.show', compact('project'));
     }
 
     /**

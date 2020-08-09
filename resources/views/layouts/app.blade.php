@@ -21,7 +21,7 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
+        <nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm {{auth()->user() == null ? 'fixed-top' : ''}}">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -38,14 +38,16 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
+                        {{-- <li class="nav-item">
+                            <a href="{{route('panel')}}" class="nav-link">
+                                Panel
+                            </a>
+                        </li> --}}
                         <li class="nav-item">
-                            <a href="{{route('projects.index')}}" class="nav-link">Portfolio</a>
+                            <a href="{{route('projects.index')}}" class="nav-link">Panel</a>
                         </li>
                         <li class="nav-item">
-                            {{-- <a href="{{route('about')}}" class="nav-link"> --}}
                             <a href="#about" class="nav-link">About</a>
-                                {{-- About --}}
-                            {{-- </a> --}}
                         </li>
                         <li class="nav-item">
                             <a href="#contact" class="nav-link">Contact</a>
@@ -85,10 +87,8 @@
         </nav>
 
         <main class="">
-            @yield('image-hero')
-            <div class="container mt-5">
-                @yield('content')
-            </div>
+            {{-- @yield('image-hero') --}}
+            @yield('content')
         </main>
     </div>
 </body>

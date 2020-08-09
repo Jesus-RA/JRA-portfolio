@@ -10997,3 +10997,12 @@ a.text-dark:focus {
 .myCard:hover{
   opacity: 1;
 }
+
+.myProject{
+  opacity: 0.3;
+  transition: ease-in-out 0.5s; 
+}
+
+.myProject:hover{
+  opacity: 1;
+}
