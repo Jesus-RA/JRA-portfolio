@@ -9,6 +9,9 @@
                 </div>
             @else
                 <div class="col-md-10 mx-auto">
+
+                    <a href="{{route('projects.create')}}" class="btn btn-dark border border-secondary mb-3">Add project</a>
+
                     <table class="table table-hover table-dark text-white">
                         <thead>
                             <tr>
@@ -21,6 +24,7 @@
     
                         <tbody>
                             @foreach ($projects as $project)
+                                @include('components.modal-project')
                                 <tr>
                                     <td>
                                         <img
@@ -33,9 +37,13 @@
                                     </td>
 
                                     <td>
-                                        <a href="{{route('projects.show', $project)}}">
+                                        {{-- <a href="{{route('projects.show', $project)}}">
                                             {{$project->name}}
-                                        </a>
+                                        </a> --}}
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal{{$project->id}}">
+                                            {{$project->name}}
+                                        </button>
                                     </td>
 
                                     <td>

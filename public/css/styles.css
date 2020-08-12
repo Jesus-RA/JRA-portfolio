@@ -1,0 +1,87 @@
+/* Intentando resolver el problema del celular horizontal */
+/* small devica portrait */
+/* @media (max-width: 575.98px) {
+  .projectImage{
+    height: 250px;
+  }
+} */
+
+/* Small device landscape */
+/* @media (min-width: 576px) and (max-width: 991.98px){
+  .projectImage{
+    height: 150px;
+  }
+} */
+
+@media (min-width: 1200px){
+  .myAbout{
+    height: 100vh;
+  }
+
+  .myContact{
+    height: 100vh;
+  }
+
+  .myPortfolio{
+    height: 100vh;
+  }
+}
+  
+@media (max-width: 768px){
+  .myContact{
+    margin-bottom: 50px;
+  }
+}
+
+.myPhoto{
+  opacity: 0.3;
+  transition: ease-in-out 1s;
+}
+
+.myPhoto:hover{
+  opacity: 1;
+}
+
+.myForm{
+  background-color: transparent;
+  margin-bottom: 50px;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 3px;
+  border-bottom: 1px solid var(--gray-dark);
+  width: 100%;
+  outline: 0;
+}
+
+.myForm:focus{
+  background-color: transparent;
+  padding: 10px;
+  border-bottom: 2px solid white;
+  color: white;
+}
+
+.myTextarea{
+  resize: none;
+}
+
+.myCard{
+  opacity: 0.5;
+  padding: 50px 0;
+  color: white;
+  background-color: transparent;
+  transition: ease-in-out 0.4s;  
+}
+
+.myCard:hover{
+  opacity: 1;
+}
+
+.myProject{
+  opacity: 0.3;
+  transition: ease-in-out 0.5s; 
+}
+
+.myProject:hover{
+  opacity: 1;
+}

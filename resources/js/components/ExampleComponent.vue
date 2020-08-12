@@ -18,6 +18,11 @@
     export default {
         mounted() {
             console.log('Component mounted.')
-        }
+        },
+        data(){
+            return{
+                projects : [1,2,3],
+            }
+        },
     }
 </script>

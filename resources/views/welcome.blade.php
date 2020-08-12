@@ -89,6 +89,8 @@
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
+        /* To make a parallax effect I have to write the below line */
+        background-attachment: fixed;
         position: relative;
         width: 100%;
         height: 100vh;

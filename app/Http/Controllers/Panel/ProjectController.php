@@ -53,6 +53,7 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         return view('projects.show', compact('project'));
+        // return view('components.modal-project', compact('project'));
     }
 
     /**
