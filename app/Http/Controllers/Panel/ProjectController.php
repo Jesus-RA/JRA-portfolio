@@ -5,9 +5,17 @@ namespace App\Http\Controllers\Panel;
 use App\Http\Controllers\Controller;
 use App\Project;
 use Illuminate\Http\Request;
+use App\Technology;
+use App\Image;
 
 class ProjectController extends Controller
 {
+
+    public function __construct()
+    {
+        // $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +23,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::where('owner_id', auth()->user()->id)->get();
         return view('projects.index', compact('projects'));        
     }
 
@@ -26,7 +34,8 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('projects.create');
+        $technologies = Technology::all();
+        return view('projects.create', compact('technologies'));
     }
 
     /**
@@ -37,11 +46,30 @@ class ProjectController extends Controller
      */
     public function store(Request $request)
     {
-        if($request->hasFile('image')){
-            $image = $request->file('image')->store('public');
-            return redirect()->back()->withSuccess($image);
-        }
-        return redirect()->back();
+
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'repository' => 'required',
+            'url' => 'required',
+            'image' => 'required|image',
+        ]);
+
+        $request->image = $request->file('image')->store('projects-images', 'public');
+
+        $project = new Project();
+        $project->fill($request->all());
+        $project->owner_id = auth()->user()->id;
+        $project->save();
+
+        $image = new Image;
+        $image->path = $request->image;
+        
+        $project->images()->save($image);
+        // $image->save();
+
+        return redirect()->route('projects.index')->withSuccess("$project->name added successfully");
+
     }
 
     /**
@@ -64,7 +92,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        //
+        return view('projects.edit', compact('project'));
     }
 
     /**
@@ -76,7 +104,29 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'repository' => 'required',
+            'url' => 'required',
+            'image' => 'image',
+        ]);
+
+        if($request->hasFile('image')){
+            $request->image = $request->file('image')->store('projects-images', 'public');
+    
+            $image = new Image();
+            $image->path = $request->image;
+    
+            $project->images()->save($image);
+            
+            $image->save();
+        }
+
+        $project->fill($request->all());
+        $project->save();
+
+        return redirect()->route('projects.index')->withSuccess("$project->name updated successfully!");
     }
 
     /**
@@ -87,6 +137,9 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        //
+        $project->images()->delete();
+        $project->delete();
+
+        return redirect()->route('projects.index')->withSuccess("$project->name was deleted successfully!");
     }
 }

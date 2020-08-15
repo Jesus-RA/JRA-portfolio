@@ -18,7 +18,8 @@
                                 <th class="text-center">Photo</th>
                                 <th class="text-center">Name</th>
                                 <th class="text-center">Description</th>
-                                <th class="text-center">Action</th>
+                                <th class="text-center">Actions</th>
+                                <th class="text-center"></th>
                             </tr>
                         </thead>
     
@@ -28,7 +29,7 @@
                                 <tr>
                                     <td>
                                         <img
-                                            src="{{ asset($project->images->first()->path) }}"
+                                            src="{{ Storage::url($project->images->first()->path) }}"
                                             alt=""
                                             width="100"
                                             height="100"
@@ -37,9 +38,6 @@
                                     </td>
 
                                     <td>
-                                        {{-- <a href="{{route('projects.show', $project)}}">
-                                            {{$project->name}}
-                                        </a> --}}
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-link" data-toggle="modal" data-target="#exampleModal{{$project->id}}">
                                             {{$project->name}}
@@ -53,8 +51,18 @@
                                     </td>
                                     
                                     <td>
-                                        <a href="" class="btn btn-warning d-inline">Edit</a>
-                                        <a href="" class="btn btn-danger d-inline">Delete</a>
+                                        <a href="{{ route('projects.edit', $project) }}" class="btn btn-warning">Edit</a>
+                                    </td>
+                                    
+                                    <td>
+                                        <form 
+                                            action="{{ route('projects.destroy', $project) }}"
+                                            method="POST"
+                                        >
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete</button>
+                                        </form>
                                     </td>
                                 </tr>
                             @endforeach

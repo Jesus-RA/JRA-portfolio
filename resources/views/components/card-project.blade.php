@@ -1,14 +1,14 @@
-<div class="card text-white bg-dark border border-secondary">
+<div class="card text-white bg-dark myProject">
 
     <div id="carousel{{$project->id}}" class="carousel slide carousel-fade hover touch" data-ride="carousel">
         <div class="carousel-inner">
             @foreach ($project->images as $image)
                 <div class="carousel-item {{$loop->first ? 'active' : ''}}" data-interval="3500">
                     <img 
-                        src="{{ asset($image->path) }}"
+                        src="{{ Storage::url($image->path) }}"
                         alt=""
-                        class="d-block w-100 card-img-top"
-                        height="300"
+                        class="d-block w-100 card-img-top projectImage"
+                        height="200"
                     >                
                 </div>
             @endforeach
@@ -26,28 +26,9 @@
     </div>
 
     <div class="card-body">
-        <h3 class="card-title">{{$project->name}}</h3>
-        <p class="card-text" class="card-text">
-            {{$project->description}}
-        </p>
-        <p class="card-text">
-            <strong class="text-success">Github repository: </strong>{{$project->repository}}
-        </p>
-        <p class="card-text">
-            <strong class="text-success">URL: </strong>{{$project->url}}
-        </p>
-        <p class="card-text">
-            <strong class="text-success">Technologies: </strong>
-            @foreach ($project->technologies as $technology)
-                <span class="badge badge-secondary">
-                    {{$technology->name}}
-                </span>
-            @endforeach
-        </p>
-        <a href="#" class="btn btn-secondary">GitHub</a>
-        <a href="#" class="btn btn-secondary">Web</a>
-        <button type="button" class="btn btn-secondary float-right" data-dismiss="modal" aria-label="Close">
-            Close
+        <h3 class="card-title text-center">{{$project->name}}</h3>
+        <button type="button" class="btn btn-dark border-light btn-block" data-toggle="modal" data-target="#exampleModal{{$project->id}}">
+            See project
         </button>
     </div>
 </div>

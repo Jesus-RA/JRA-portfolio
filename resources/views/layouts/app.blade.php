@@ -91,6 +91,14 @@
 
         <main class="">
             {{-- @yield('image-hero') --}}
+            @if (session('success'))
+                <div class="container mt-5">
+                    <div class="alert alert-success text-center col-md-8 mx-auto">
+                        {{ session('success') }}
+                    </div>
+                </div>
+            @endif
+
             @yield('content')
         </main>
     </div>

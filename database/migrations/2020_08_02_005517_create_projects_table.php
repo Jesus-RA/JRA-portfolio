@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->string('description', 1500);
+            $table->text('description');
             $table->string('repository');
             $table->string('url');
             $table->bigInteger('owner_id')->unsigned();

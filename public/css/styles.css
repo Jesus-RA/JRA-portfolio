@@ -55,10 +55,27 @@
 }
 
 .myForm:focus{
-  background-color: transparent;
-  padding: 10px;
   border-bottom: 2px solid white;
   color: white;
+}
+
+.myForm:focus::placeholder{
+  color: white;
+}
+
+
+.errorForm{
+  border-bottom: 1px solid red;
+  margin-bottom: 0;
+  color: red;
+}
+
+.errorForm::placeholder{
+  color: red;
+}
+
+.errorSpan{
+  margin-bottom: 50px;
 }
 
 .myTextarea{

@@ -1,10 +1,11 @@
 <?php
 
-use Illuminate\Database\Seeder;
+use App\User;
 use App\Image;
 use App\Project;
 use App\Technology;
-use App\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -24,6 +25,11 @@ class DatabaseSeeder extends Seeder
 
                 $user->image()->save(factory(Image::class)->make());
             });
+
+        $myUser = factory(User::class)->make();
+        $myUser->email = 'jesus.ra98@hotmail.com';
+        $myUser->password = Hash::make('jamon123');
+        $myUser->save();
 
         $projects = factory(Project::class, 7)
             ->make()
