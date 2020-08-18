@@ -19,14 +19,13 @@
                                 <th class="text-center">Name</th>
                                 <th class="text-center">Description</th>
                                 <th class="text-center">Actions</th>
-                                <th class="text-center"></th>
                             </tr>
                         </thead>
     
                         <tbody>
                             @foreach ($projects as $project)
                                 @include('components.modal-project')
-                                <tr>
+                                <tr class="text-center">
                                     <td>
                                         <img
                                             src="{{ Storage::url($project->images->first()->path) }}"
@@ -52,17 +51,10 @@
                                     
                                     <td>
                                         <a href="{{ route('projects.edit', $project) }}" class="btn btn-warning">Edit</a>
-                                    </td>
-                                    
-                                    <td>
-                                        <form 
-                                            action="{{ route('projects.destroy', $project) }}"
-                                            method="POST"
-                                        >
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger">Delete</button>
-                                        </form>
+                                        <delete-project
+                                            project="{{ $project->id }}"
+                                            project-name="{{ $project->name }}"
+                                        ></delete-project>
                                     </td>
                                 </tr>
                             @endforeach

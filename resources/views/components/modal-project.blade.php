@@ -1,6 +1,6 @@
 <div class="modal fade" id="exampleModal{{$project->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
-        <div class="modal-content bg-dark">
+        <div class="modal-content bg-dark text-white">
             {{-- Carousel --}}
             <div id="carousel{{$project->id}}" class="carousel slide carousel-fade hover touch" data-ride="carousel">
                 <div class="carousel-inner">

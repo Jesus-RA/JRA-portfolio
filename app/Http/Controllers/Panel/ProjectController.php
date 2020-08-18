@@ -140,6 +140,7 @@ class ProjectController extends Controller
         $project->images()->delete();
         $project->delete();
 
-        return redirect()->route('projects.index')->withSuccess("$project->name was deleted successfully!");
+        // return redirect()->route('projects.index')->withSuccess("$project->name was deleted successfully!");
+        return $project->name;
     }
 }

@@ -21,6 +21,9 @@
 
     {{-- My Styles --}}
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+
+    {{-- @yield('styles') --}}
+
 </head>
 <body>
     <div id="app">
@@ -102,5 +105,8 @@
             @yield('content')
         </main>
     </div>
+
+    {{-- @yield('scripts') --}}
+
 </body>
 </html>
