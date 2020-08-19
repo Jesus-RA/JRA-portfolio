@@ -102,3 +102,14 @@
 .myProject:hover{
   opacity: 1;
 }
+
+.dropzone{
+  height: 25%;
+  width: 100%;
+  border: 2px var(--gray-dark) dashed!important;
+  background: none!important;
+  background-color: none!important;
+  color: white!important;
+  line-height: 200%;
+  margin: none;
+}

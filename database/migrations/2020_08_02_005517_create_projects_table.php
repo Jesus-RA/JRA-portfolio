@@ -17,8 +17,8 @@ class CreateProjectsTable extends Migration
             $table->id();
             $table->string('name');
             $table->text('description');
-            $table->string('repository');
-            $table->string('url');
+            $table->string('repository')->nullable();
+            $table->string('url')->nullable();
             $table->bigInteger('owner_id')->unsigned();
             $table->timestamps();
 

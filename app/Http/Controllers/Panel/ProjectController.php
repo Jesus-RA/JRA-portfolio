@@ -2,11 +2,12 @@
 
 namespace App\Http\Controllers\Panel;
 
-use App\Http\Controllers\Controller;
-use App\Project;
-use Illuminate\Http\Request;
-use App\Technology;
 use App\Image;
+use App\Project;
+use App\Technology;
+use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\ProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -44,29 +45,21 @@ class ProjectController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-
-        $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'repository' => 'required',
-            'url' => 'required',
-            'image' => 'required|image',
-        ]);
-
-        $request->image = $request->file('image')->store('projects-images', 'public');
-
+    public function store(ProjectRequest $request)
+    {   
         $project = new Project();
         $project->fill($request->all());
         $project->owner_id = auth()->user()->id;
         $project->save();
 
-        $image = new Image;
-        $image->path = $request->image;
-        
-        $project->images()->save($image);
-        // $image->save();
+        $images = $request->file('image');
+
+        foreach($images as $image){
+            $newImage = new Image;
+            $newImage->path = $image->store('project-images', 'public');
+            $project->images()->save($newImage);
+            $newImage->save();
+        }
 
         return redirect()->route('projects.index')->withSuccess("$project->name added successfully");
 

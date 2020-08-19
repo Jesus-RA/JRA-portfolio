@@ -3,12 +3,15 @@
 @section('content')
     <div class="container mt-5 ">
         <div class="row text-white">
-            <div class="col-md-6 mx-auto text-center">
-                <h1 class="mb-3">Create project</h1>
+            <div class=" col-sm-12 col-md-10 col-lg-6 col-xl-6 mx-auto text-center">
+                <h1 class="mb-5">Create project</h1>
+                Sesion: {{session('imagen')}} <br>
+                Key: {{session('key')}}
                 <form
                     action="{{route('projects.store')}}"
                     method="POST"
                     enctype="multipart/form-data"
+                    id="createProject"
                 >
                     @csrf
                     <div class="form-group">
@@ -42,7 +45,7 @@
                     <div class="form-group">
                         {{-- Aquí insertas las technologías a elegir para crear un proyecto --}}
                     </div>
-
+                    
                     <div class="form-group">
                         <input 
                             type="text"
@@ -77,20 +80,23 @@
                         <span class="font-weight-bold mr-5 @error('image') text-danger @enderror">Image</span>
                         <input
                             type="file"
-                            name="image"
+                            name="image[]"
                             class="myForm @error('image') errorForm @enderror"
+                            multiple
                         >
-                        @error('image')
+                        @error('image[]')
                             <span class="invalid-feedback d-block">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
 
-                    <div class="form-group">
-                        <button type="submit" class="btn btn-dark btn-block">Add project</button>
-                    </div>
+
                 </form>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-dark btn-block mt-5" form="createProject">Add project</button>
+                </div>
             </div>
         </div>
     </div>
