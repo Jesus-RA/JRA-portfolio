@@ -41,6 +41,18 @@
                     </div>
 
                     <div class="form-group">
+                        <technologies
+                            :technologies="{{ $technologies }}"
+                            :project="{{ json_encode($project->technologies) }}"
+                        ></technologies>
+                        @error('technologies')
+                            <span class="invalid-feedback d-block errorSpan">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div>
+
+                    <div class="form-group">
                         <input 
                             type="text"
                             name="repository"

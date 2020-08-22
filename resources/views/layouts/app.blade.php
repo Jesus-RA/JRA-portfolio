@@ -50,7 +50,7 @@
                             </a>
                         </li> --}}
                         <li class="nav-item">
-                            <a href="{{route('projects.index')}}" class="nav-link">Panel</a>
+                            <a href="{{route('panel')}}" class="nav-link">Panel</a>
                         </li>
                         <li class="nav-item">
                             <a href="#about" class="nav-link">About</a>
@@ -98,6 +98,9 @@
                 <div class="container mt-5">
                     <div class="alert alert-success text-center col-md-8 mx-auto">
                         {{ session('success') }}
+                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
                 </div>
             @endif

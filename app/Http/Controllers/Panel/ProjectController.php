@@ -35,7 +35,7 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        $technologies = Technology::all();
+        $technologies = Technology::all(['id', 'name']);
         return view('projects.create', compact('technologies'));
     }
 
@@ -56,9 +56,15 @@ class ProjectController extends Controller
 
         foreach($images as $image){
             $newImage = new Image;
-            $newImage->path = $image->store('project-images', 'public');
+            $newImage->path = $image->store('projects-images', 'public');
             $project->images()->save($newImage);
             $newImage->save();
+        }
+
+        $technologies = explode(",", $request->technologies);
+        foreach ($technologies as $technology) {
+            $tech = Technology::find($technology);
+            $project->technologies()->save($tech);
         }
 
         return redirect()->route('projects.index')->withSuccess("$project->name added successfully");
@@ -74,7 +80,6 @@ class ProjectController extends Controller
     public function show(Project $project)
     {
         return view('projects.show', compact('project'));
-        // return view('components.modal-project', compact('project'));
     }
 
     /**
@@ -85,7 +90,8 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
-        return view('projects.edit', compact('project'));
+        $technologies = Technology::all(['id', 'name']);
+        return view('projects.edit', compact('project', 'technologies'));
     }
 
     /**
@@ -98,11 +104,9 @@ class ProjectController extends Controller
     public function update(Request $request, Project $project)
     {
         $request->validate([
-            'name' => 'required',
-            'description' => 'required',
-            'repository' => 'required',
-            'url' => 'required',
-            'image' => 'image',
+            'name' => ['required'],
+            'description' => ['required'],
+            'technologies' => ['required'],
         ]);
 
         if($request->hasFile('image')){
@@ -119,6 +123,9 @@ class ProjectController extends Controller
         $project->fill($request->all());
         $project->save();
 
+        $technologies = explode(",", $request->technologies);
+        $project->technologies()->sync($technologies);
+
         return redirect()->route('projects.index')->withSuccess("$project->name updated successfully!");
     }
 
@@ -130,7 +137,8 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        $project->images()->delete();
+        $project->images()->detach();
+        $project->technologies()->detach();
         $project->delete();
 
         // return redirect()->route('projects.index')->withSuccess("$project->name was deleted successfully!");

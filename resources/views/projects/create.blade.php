@@ -5,13 +5,10 @@
         <div class="row text-white">
             <div class=" col-sm-12 col-md-10 col-lg-6 col-xl-6 mx-auto text-center">
                 <h1 class="mb-5">Create project</h1>
-                Sesion: {{session('imagen')}} <br>
-                Key: {{session('key')}}
                 <form
                     action="{{route('projects.store')}}"
                     method="POST"
                     enctype="multipart/form-data"
-                    id="createProject"
                 >
                     @csrf
                     <div class="form-group">
@@ -43,7 +40,14 @@
                     </div>
 
                     <div class="form-group">
-                        {{-- Aquí insertas las technologías a elegir para crear un proyecto --}}
+                        <technologies
+                            :technologies="{{ json_encode($technologies) }}"
+                        ></technologies>
+                        @error('technologies')
+                            <span class="invalid-feedback d-block errorSpan">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
                     </div>
                     
                     <div class="form-group">
@@ -91,12 +95,11 @@
                         @enderror
                     </div>
 
-
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-dark btn-block">Add project</button>
+                    </div>
+                    
                 </form>
-
-                <div class="form-group">
-                    <button type="submit" class="btn btn-dark btn-block mt-5" form="createProject">Add project</button>
-                </div>
             </div>
         </div>
     </div>
