@@ -10,9 +10,11 @@
 
         @else
             <div class="col-md-8 mx-auto">
+                <a href="{{ route('technologies.create') }}" class="btn btn-dark border border-secondary mb-3">Add Technology</a>
                 <table class="table text-white text-center table-hover table-dark ">
                     <thead>
                         <th>id</th>
+                        <th>Icon</th>
                         <th>Name</th>
                         <th>Actions</th>
                     </thead>
@@ -21,6 +23,9 @@
                         @foreach ($technologies as $technology)
                             <tr>
                                 <td>{{ $technology->id }}</td>
+                                <td>
+                                    <img src="{{ Storage::url($technology->icon->path) }}" alt="technology{{$technology->name}}" width="100">
+                                </td>
                                 <td>{{ $technology->name }}</td>
                                 <td>
                                     <a

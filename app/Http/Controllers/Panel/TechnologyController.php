@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Panel;
 
 use App\Technology;
+use App\Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -26,7 +27,7 @@ class TechnologyController extends Controller
      */
     public function create()
     {
-        //
+        return view('technologies.create');
     }
 
     /**
@@ -37,7 +38,20 @@ class TechnologyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'icon' => 'required|image',
+        ]);
+
+        $technology = new Technology();
+        $technology->fill($request->all());
+        $technology->save();
+        
+        $image = new Image();
+        $image->path = $request->file('icon')->store('technologies-uploads', 'public');
+        $technology->icon()->save($image);
+        
+        return redirect()->route('technologies.index')->withSuccess("$technology->name was created successfully!");
     }
 
     /**
@@ -59,7 +73,7 @@ class TechnologyController extends Controller
      */
     public function edit(Technology $technology)
     {
-        //
+        return view('technologies.edit', compact('technology'));
     }
 
     /**
@@ -71,7 +85,22 @@ class TechnologyController extends Controller
      */
     public function update(Request $request, Technology $technology)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        $technology->fill($request->all());
+        $technology->save();
+
+        if($request->hasFile('icon')){
+            $image = new Image();
+            $image->path = $request->file('icon')->store('technologies-uploads', 'public');
+            
+            $technology->icon()->delete();
+            $technology->icon()->save($image);
+        }
+
+        return redirect()->route('technologies.index')->withSuccess("$technology->name updated successfully!");
     }
 
     /**
@@ -82,7 +111,7 @@ class TechnologyController extends Controller
      */
     public function destroy(Technology $technology)
     {
-        $technology->projects()->delete();
+        $technology->icon()->delete();
         $technology->delete();
 
         return $technology->name;

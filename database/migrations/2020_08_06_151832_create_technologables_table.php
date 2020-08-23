@@ -18,7 +18,7 @@ class CreateTechnologablesTable extends Migration
             
             $table->morphs('technologable');
 
-            $table->foreign('technology_id')->references('id')->on('technologies');
+            $table->foreign('technology_id')->references('id')->on('technologies')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

@@ -16,7 +16,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $technologies = factory(Technology::class, 10)->create();        
+        $technologies = factory(Technology::class, 10)->create()
+            ->each(function ($technology) {
+                $technology->icon()->save(factory(App\Image::class)->make());
+            });
 
         // $users = factory(User::class, 5)
         //     ->create()
@@ -32,11 +35,10 @@ class DatabaseSeeder extends Seeder
         $myUser->save();
 
         $myUser->projects()
-                ->save( factory(Project::class)->make() )
+                ->save( factory(Project::class)->create(['owner_id' => $myUser->id]) )
                 ->each(function ($project) use ($technologies){
                     $project->technologies()->saveMany($technologies->random(2,8));
                     $project->images()->saveMany( factory(Image::class, mt_rand(3, 5))->make() );
-                    // $project->save();
                 });
 
         // $projects = factory(Project::class, 7)

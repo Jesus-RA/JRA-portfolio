@@ -2002,7 +2002,7 @@ __webpack_require__.r(__webpack_exports__);
           }).then(function (response) {
             _this.$swal({
               title: 'Deleted!',
-              text: 'Your technology' + response.data + 'has been deleted!',
+              text: 'Your technology ' + response.data + ' has been deleted!',
               icon: 'success'
             }); // Deleting technology from the DOM
 

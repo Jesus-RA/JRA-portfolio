@@ -33,10 +33,10 @@
                             .then(response => {
                                 this.$swal({
                                     title: 'Deleted!',
-                                    text: 'Your technology'+response.data+'has been deleted!',
+                                    text: 'Your technology '+response.data+' has been deleted!',
                                     icon: 'success',
                                 })
-                                
+
                                 // Deleting technology from the DOM
                                 this.$el.parentNode.parentNode.parentNode.removeChild(this.$el.parentNode.parentNode);
                             })

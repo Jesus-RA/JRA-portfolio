@@ -11,11 +11,19 @@ class Technology extends Model
         'name',
     ];
 
+    protected $with = [
+        'icon',
+    ];
+
     public function projects(){
         return $this->morphedByMany(Project::class, 'technologable');
     }
 
     public function users(){
         return $this->morphedByMany(User::class, 'technologable');
+    }
+
+    public function icon(){
+        return $this->morphOne(Image::class, 'imageable');
     }
 }

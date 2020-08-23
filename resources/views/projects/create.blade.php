@@ -89,14 +89,14 @@
                             multiple
                         >
                         @error('image[]')
-                            <span class="invalid-feedback d-block">
+                            <span class="invalid-feedback d-block errorSpan">
                                 <strong>{{ $message }}</strong>
                             </span>
                         @enderror
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-dark btn-block">Add project</button>
+                        <button type="submit" class="btn btn-dark btn-block border border-secondary">Add project</button>
                     </div>
                     
                 </form>
