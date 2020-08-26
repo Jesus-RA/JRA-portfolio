@@ -113,3 +113,34 @@
   line-height: 200%;
   margin: none;
 }
+
+a{
+  color: white;
+  text-decoration: none;
+}
+
+a:hover{
+  color: white;
+}
+
+.myA{
+  text-decoration: none;
+  color: gainsboro;
+}
+
+
+.myA:hover{
+  border-bottom: 1px solid white;
+  font-weight: bolder;
+  color: white!important;
+}
+
+.myActive{
+  border-bottom: 1px solid white;
+  font-weight: bolder;
+  color: white!important;
+}
+
+.myNav{
+  background: rgba(0, 0, 0, 0.7);
+}
