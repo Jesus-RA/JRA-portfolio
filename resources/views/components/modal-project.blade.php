@@ -46,12 +46,10 @@
                         </span>
                     @endforeach
                 </p>
-                <a href="{{$project->repository}}" class="btn btn-dark mr-2" target="_blank">
-                    <img src="{{asset('img/github/PNG/GitHub-Mark-Light-32px.png')}}" alt="github-icon" target="_blank">
-                </a>
-                <a href="{{$project->url}}" class="btn btn-dark">
-                    <img src="{{asset('img/icons/sitio-web.png')}}" alt="web-icon">
-                </a>
+                <a href="{{$project->repository}}" class="flaticon-github mx-2" target="_blank"></a>
+                @if ($project->url != null)
+                    <a href="{{$project->url}}" class="flaticon-external-link-symbol mx-2" target="_blank"></a>
+                @endif
                 <button type="button" class="btn btn-secondary float-right" data-dismiss="modal" aria-label="Close">
                     Close
                 </button>

@@ -13,7 +13,7 @@
                 </div>
             @endforeach
         </div>
-        @if (!auth()->user())
+        @if (auth()->user())
             <a href="#carousel{{$project->id}}" class="carousel-control-prev" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 {{-- <span class="sr-only">Previous</span> --}}

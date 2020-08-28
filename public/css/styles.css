@@ -121,6 +121,7 @@ a{
 
 a:hover{
   color: white;
+  text-decoration: none;
 }
 
 .myA{
@@ -143,4 +144,47 @@ a:hover{
 
 .myNav{
   background: rgba(0, 0, 0, 0.7);
+}
+
+html{
+  scroll-behavior: smooth;
+}
+
+.footer{
+  margin-top: auto;
+  background-color: rgba(0, 0, 0, 0.7);
+  /* border-top: 0.001px solid gray; */
+}
+
+html{
+  height: 100%;
+}
+
+body{
+  min-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+}
+
+*::selection{
+  background: rgba(255, 255, 255, 0.9);
+  color: black;
+}
+
+.author p{
+  color: gainsboro;
+  opacity: 0.5;
+  transition: 0.4s ease-in-out;
+}
+
+.author span{
+  color: gainsboro;
+  opacity: 0.8;
+  transition: 0.4s ease-in-out;
+}
+
+.author p:hover{
+  opacity: 1;
+  color: white;
 }

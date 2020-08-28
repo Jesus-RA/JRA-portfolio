@@ -21,6 +21,7 @@
 
     {{-- My Styles --}}
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ asset('flaticon/flaticon.css') }}">
 
     @yield('styles')
 
@@ -29,7 +30,8 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark myNav shadow-lg {{auth()->user() == null ? 'fixed-top' : ''}}">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
+                {{-- <a class="navbar-brand" href="{{ url('/') }}"> --}}
+                <a class="navbar-brand" href="#top" onclick="clean()">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -113,6 +115,7 @@
             @yield('content')
         </main>
     </div>
+    @include('components.footer')
 
     @yield('scripts')
 
@@ -127,6 +130,13 @@
                 event.target.classList.remove('myActive');
             }else{
                 event.target.classList.add('myActive');
+            }
+        }
+
+        function clean(){
+            links = document.querySelectorAll('ul li a');
+            for(link of links){
+                link.classList.remove('myActive');
             }
         }
 

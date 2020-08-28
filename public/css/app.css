@@ -70,7 +70,8 @@ body {
   font-size: 0.9rem;
   font-weight: 400;
   line-height: 1.6;
-  color: white;
+  color: #212529;
+  color: white!important;
   text-align: left;
   background-color: #000000;
 }
@@ -10787,7 +10788,7 @@ a.text-dark:focus {
 }
 
 .text-body {
-  color: #ffffff !important;
+  color: #212529 !important;
 }
 
 .text-muted {
@@ -10927,4 +10928,3 @@ a.text-dark:focus {
     border-color: #dee2e6;
   }
 }
-
