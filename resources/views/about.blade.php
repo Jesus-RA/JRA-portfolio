@@ -8,17 +8,19 @@
                 passionate for learn something new every day, I really enjoy learn
                 what I like!
             </p>
-            
 
         </div>
 
         <div class="col-md-12 text-white my-5">
-            Technologies I know and I use
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo consequuntur in delectus sunt sapiente illum debitis necessitatibus rem earum voluptates, eaque quis quisquam officiis natus eius harum. Eaque, assumenda animi!
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo consequuntur in delectus sunt sapiente illum debitis necessitatibus rem earum voluptates, eaque quis quisquam officiis natus eius harum. Eaque, assumenda animi!
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste.
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Lorem, ipsum dolor.
+            <h4>Technologies:</h4>
+            <ul class="technologies">
+                @foreach ($technologies as $technology)
+                <li class="technology">
+                    <img src="{{ Storage::url($technology->icon->path) }}" alt="{{ $technology->name }}" width="35" height="35">
+                    <span class="ml-3 font-weigth-bold">{{ $technology->name }}</span>
+                </li>
+                @endforeach
+            </ul>
         </div>
 
     </div>

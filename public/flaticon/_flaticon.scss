@@ -1,9 +1,9 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 27/08/2020 20:05
+    Creation date: 28/08/2020 05:21
     */
 
-    @font-face {
+@font-face {
   font-family: "Flaticon";
   src: url("./Flaticon.eot");
   src: url("./Flaticon.eot?#iefix") format("embedded-opentype"),
@@ -11,6 +11,7 @@
        url("./Flaticon.woff") format("woff"),
        url("./Flaticon.ttf") format("truetype"),
        url("./Flaticon.svg#Flaticon") format("svg");
+       
   font-weight: normal;
   font-style: normal;
 }
@@ -22,8 +23,8 @@
   }
 }
 
-    .fi:before{
-        display: inline-block;
+.fi:before{
+  display: inline-block;
   font-family: "Flaticon";
   font-style: normal;
   font-weight: normal;
@@ -35,12 +36,14 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   font-smoothing: antialiased;
-    }
+}
 
-    .flaticon-github:before { content: "\f100"; }
-.flaticon-linkedin:before { content: "\f101"; }
-.flaticon-external-link-symbol:before { content: "\f102"; }
+.flaticon-mysql:before { content: "\f100"; }
+.flaticon-github:before { content: "\f101"; }
+.flaticon-linkedin:before { content: "\f102"; }
+.flaticon-external-link-symbol:before { content: "\f103"; }
     
-    $font-Flaticon-github: "\f100";
-    $font-Flaticon-linkedin: "\f101";
-    $font-Flaticon-external-link-symbol: "\f102";
+$font-Flaticon-mysql: "\f100";
+$font-Flaticon-github: "\f101";
+$font-Flaticon-linkedin: "\f102";
+$font-Flaticon-external-link-symbol: "\f103";
