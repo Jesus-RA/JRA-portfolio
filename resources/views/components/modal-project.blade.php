@@ -28,7 +28,7 @@
             </div>
             {{-- End Carousel --}}
             <div class="modal-body">
-                <h3 class="card-title text-center">{{$project->name}}</h3>
+                <h2 class="card-title text-center">{{$project->name}}</h2>
                 <p class="card-text" class="card-text">
                     {{$project->description}}
                 </p>

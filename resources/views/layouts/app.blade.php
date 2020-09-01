@@ -28,10 +28,10 @@
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-dark myNav shadow-lg {{auth()->user() == null ? 'fixed-top' : ''}}">
+        <nav class="navbar navbar-expand-md navbar-dark myNav shadow-lg  {{auth()->user() == null ? 'fixed-top' : ''}}">
             <div class="container">
                 {{-- <a class="navbar-brand" href="{{ url('/') }}"> --}}
-                <a class="navbar-brand" href="{{ auth()->user() ? route('home') : '#top' }}" onclick="clean()">
+                <a id="titulo" class="navbar-brand" href="{{ auth()->user() ? route('home') : '#top' }}" onclick="clean()">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -122,7 +122,7 @@
     <script>
 
         function active(){
-            links = document.querySelectorAll('ul li a');
+            const links = document.querySelectorAll('ul li a');
             for(link of links){
                 link.classList.remove('myActive');
             }
@@ -131,6 +131,7 @@
             }else{
                 event.target.classList.add('myActive');
             }
+            document.querySelector('#navbarSupportedContent').classList.remove('show');
         }
 
         function clean(){

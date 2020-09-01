@@ -26,7 +26,7 @@
     </div>
 
     <div class="card-body">
-        <h3 class="card-title text-center">{{$project->name}}</h3>
+        <h3 class="card-title text-center font-weight-bold">{{$project->name}}</h3>
         <button type="button" class="btn btn-dark border-light btn-block" data-toggle="modal" data-target="#exampleModal{{$project->id}}">
             See project
         </button>

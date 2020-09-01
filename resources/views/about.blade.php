@@ -1,12 +1,19 @@
 <div class="row my-5 myAbout">
     <div class="col-md-6 my-auto">
-
+        
         <div class="col-md-12 text-white  my-5">
+            <h2 class="mb-3">About me</h2>
             
             <p>
                 I'am a Computer Science student and self taught web developer,
                 passionate for learn something new every day, I really enjoy learn
                 what I like!
+            </p>
+
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ullam placeat voluptatibus explicabo optio blanditiis, sequi iure nostrum eaque dolorem, aliquid quo corporis id mollitia enim maxime commodi reprehenderit consectetur.
+                {{-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ullam placeat voluptatibus explicabo optio blanditiis, sequi iure nostrum eaque dolorem, aliquid quo corporis id mollitia enim maxime commodi reprehenderit consectetur. --}}
+                {{-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ullam placeat voluptatibus explicabo optio blanditiis, sequi iure nostrum eaque dolorem, aliquid quo corporis id mollitia enim maxime commodi reprehenderit consectetur. --}}
             </p>
 
         </div>
