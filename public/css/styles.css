@@ -108,12 +108,19 @@ input:-webkit-autofill {
 }
 
 .myProject{
+  background-color: black;
   opacity: 0.4;
-  transition: ease-in-out 0.5s; 
+  transition: ease-in-out 0.5s;
+  box-shadow: 0 4px 8px 0 rgba(158, 158, 158, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
 }
 
 .myProject:hover{
   opacity: 1;
+}
+
+.myModal{
+  background-color: black;
+  box-shadow: 0 4px 8px 0 rgba(158, 158, 158, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
 }
 
 .dropzone{

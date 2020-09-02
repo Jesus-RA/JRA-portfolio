@@ -2,20 +2,35 @@
     <div class="col-xs-12 col-sm-12 col-md-10 col-lg-8 mx-auto my-auto">
         <div class="card border border-dark myCard opaque" id="contactCard">
             <h2 class="text-center">Get in touch</h2>
-            <form action="#about" id="formContact">
+            <form action="{{ route('contacts.store') }}" method="POST" id="formContact">
                 @csrf
                 <div class="container">
                     <div class="row">
                         <div class="col-6 mt-5">
-                            <input type="text" name="name" placeholder="Name" class="myForm" autocomplete="off" onkeyup="contactActive()" required>
+                            <input type="text" name="name" placeholder="Name" class="myForm @error('name') errorForm @enderror" autocomplete="off" onkeyup="contactActive()" >
+                            @error('name')
+                                <span class="invalid-feedback d-block errorSpan" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
             
                         <div class="col-6 mt-5">
-                            <input type="text" name="email" placeholder="e-mail" class="myForm" autocomplete="email" onkeyup="contactActive()" required>
+                            <input type="text" name="email" placeholder="e-mail" class="myForm @error('name') errorForm @enderror" autocomplete="email" onkeyup="contactActive()" >
+                            @error('email')
+                                <span class="invalid-feedback d-block errorSpan" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
             
                         <div class="col-12 my-auto">
-                            <textarea name="message" id="message" rows="5" class="myForm myTextarea" placeholder="Leave a message" autocomplete="off" onkeyup="contactActive()" required></textarea>
+                            <textarea name="message" id="message" rows="5" class="myForm myTextarea @error('name') errorForm @enderror" placeholder="Leave a message" autocomplete="off" onkeyup="contactActive()" ></textarea>
+                            @error('message')
+                                <span class="invalid-feedback d-block errorSpan">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
                         </div>
                         <div class="col-12">
                             <button type="submit" class="btn btn-dark btn-block">Send</button>

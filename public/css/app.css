@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css2?family=Lobster&family=Permanent+Marker&family=Rancho&family=Ultra&display=swap);@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css2?family=Rancho&display=swap);@charset "UTF-8";
 
 /*!
  * Bootstrap v4.5.0 (https://getbootstrap.com/)
@@ -10930,6 +10930,6 @@ a.text-dark:focus {
 
 #titulo {
   font-family: "Rancho", cursive;
-  font-size: 1.3rem;
+  font-size: 1.5rem;
 }
 

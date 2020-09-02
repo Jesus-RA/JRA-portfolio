@@ -23,7 +23,7 @@
             <ul class="technologies">
                 @foreach ($technologies as $technology)
                 <li class="technology">
-                    <img src="{{ Storage::url($technology->icon->path) }}" alt="{{ $technology->name }}" width="35" height="35">
+                    <img src="{{ Storage::url($technology->icon->path) }}" alt="{{ $technology->name }}" width="30" height="30">
                     <span class="ml-3 font-weigth-bold">{{ $technology->name }}</span>
                 </li>
                 @endforeach
