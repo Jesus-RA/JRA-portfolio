@@ -7,7 +7,7 @@
 require('./bootstrap');
 
 import VueSweetalert2 from 'vue-sweetalert2';
-
+import '../sass/_dark.scss';
 window.Vue = require('vue');
 
 /**
@@ -24,7 +24,10 @@ Vue.use(VueSweetalert2);
 Vue.component('delete-project', require('./components/DeleteProject.vue').default);
 Vue.component('technologies', require('./components/Technologies.vue').default);
 Vue.component('delete-technology', require('./components/DeleteTechnology.vue').default);
+Vue.component('contact', require('./components/Contact.vue').default);
 
+// Ver los paquetes instalados
+// console.log(Vue.prototype)   
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application

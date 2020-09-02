@@ -22,7 +22,8 @@
             @include('portfolio')
         </div> --}}
         <section id="contact" class="">
-            @include('contact')
+            <contact></contact>
+            {{-- @include('contact') --}}
         </section>
         {{-- <div id="contact" class="py-5">
             @include('contact')

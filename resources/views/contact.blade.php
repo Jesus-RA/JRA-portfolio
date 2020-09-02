@@ -46,25 +46,25 @@
     <script>
 
         function contactActive(){
-            event.target.classList.add('activeForm');
-            
-            const contactCard = document.getElementById('contactCard');
-            contactCard.classList.remove('opaque');
-            
-            const inputs = document.querySelectorAll('.myForm');
-            let inputsEmpty = 0;
-            for(input of inputs){
-                if(input.value.length === 0) {
-                    inputsEmpty++
-                }
-            }
-            // When inputs was emptied contact card comes back to be opaque
-            if(inputsEmpty === 3){
-                contactCard.classList.add('opaque');
+                event.target.classList.add('activeForm');
+                
+                const contactCard = document.getElementById('contactCard');
+                contactCard.classList.remove('opaque');
+                
+                const inputs = document.querySelectorAll('.myForm');
+                let inputsEmpty = 0;
                 for(input of inputs){
-                    input.classList.remove('activeForm');
+                    if(input.value.length === 0) {
+                        inputsEmpty++
+                    }
                 }
-            }
+                // When inputs was emptied contact card comes back to be opaque
+                if(inputsEmpty === 3){
+                    contactCard.classList.add('opaque');
+                    for(input of inputs){
+                        input.classList.remove('activeForm');
+                    }
+                }
             
         }
 

@@ -18,13 +18,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    
     {{-- My Styles --}}
     <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
     <link rel="stylesheet" href="{{ asset('flaticon/flaticon.css') }}">
 
     @yield('styles')
-
 </head>
 <body>
     <div id="app">
