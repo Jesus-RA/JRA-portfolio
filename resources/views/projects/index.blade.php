@@ -3,10 +3,11 @@
 @section('content')
     <div class="container mt-5">
         <div class="row">
-            @empty($projects)
+            @if( count($projects) <= 0)
                 <div class="alert alert-dark text-center col-md-6 mx-auto">
                     There is no projects yet.
                 </div>
+                <a href="{{route('projects.create')}}" class="btn btn-link btn-block mb-3">Create the first one</a>
             @else
                 <div class="col-md-10 mx-auto">
 
@@ -61,7 +62,7 @@
                         </tbody>
                     </table>
                 </div>
-            @endempty        
+            @endif        
         </div>
     </div>
 @endsection

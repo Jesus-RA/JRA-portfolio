@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Panel;
 
-use App\Technology;
 use App\Image;
+use App\Technology;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class TechnologyController extends Controller
 {
@@ -48,7 +49,7 @@ class TechnologyController extends Controller
         $technology->save();
         
         $image = new Image();
-        $image->path = $request->file('icon')->store('technologies-uploads', 'public');
+        $image->path =  $request->file('icon')->store('technologies-uploads', 'public');
         $technology->icon()->save($image);
         
         return redirect()->route('technologies.index')->withSuccess("$technology->name was created successfully!");
@@ -111,6 +112,8 @@ class TechnologyController extends Controller
      */
     public function destroy(Technology $technology)
     {
+        Storage::disk('public')->delete($technology->icon->path);
+
         $technology->icon()->delete();
         $technology->delete();
 

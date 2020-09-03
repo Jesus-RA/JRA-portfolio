@@ -1944,11 +1944,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
     sendMail: function sendMail() {
       var _this = this;
 
+      event.preventDefault();
       this.$swal.showLoading();
       var inputs = document.querySelectorAll('.myForm');
       var form = document.querySelector('form#contact');
@@ -1969,6 +1973,8 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           });
 
           _this.removeErrorClass(inputs);
+
+          _this.makeContactOpaque();
         })["catch"](function (error) {
           _this.$swal({
             title: '¡Campos vacíos!',
@@ -2063,8 +2069,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         _iterator4.f();
       }
     },
-    contactActive: function contactActive() {
-      event.target.classList.add('activeForm');
+    makeContactOpaque: function makeContactOpaque() {
       var contactCard = document.getElementById('contactCard');
       contactCard.classList.remove('opaque');
       var inputs = document.querySelectorAll('.myForm');
@@ -2086,6 +2091,10 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
           _iterator5.f();
         }
       }
+    },
+    contactActive: function contactActive() {
+      event.target.classList.add('activeForm');
+      this.makeOpaqueContact();
     }
   }
 });
@@ -41765,6 +41774,12 @@ var render = function() {
         },
         [
           _c("h2", { staticClass: "text-center" }, [_vm._v("Get in touch")]),
+          _vm._v(" "),
+          _c("p", { staticClass: "text-center mt-3 px-4" }, [
+            _vm._v(
+              "\n                If you have some projects you need to build, just let me know!\n            "
+            )
+          ]),
           _vm._v(" "),
           _c("form", { attrs: { id: "contact" } }, [
             _c("div", { staticClass: "container" }, [

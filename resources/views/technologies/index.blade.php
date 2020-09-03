@@ -3,10 +3,11 @@
 @section('content')
 
     <div class="container mt-5">
-        @empty($technologies)
+        @if( count($technologies) <= 0 )
             <div class="alert alert-danger text-center col-sm-8 col-md-6 mx-auto">
                 There is no technologies yet!
             </div>
+            <a href="{{ route('technologies.create') }}" class="btn btn-link btn-block mb-3">Create the first one</a>
 
         @else
             <div class="col-md-8 mx-auto">
@@ -43,7 +44,7 @@
                 </table>
             </div>
 
-        @endempty
+        @endif
 
     </div>
 @endsection

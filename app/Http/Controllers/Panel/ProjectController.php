@@ -8,6 +8,7 @@ use App\Technology;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -137,7 +138,10 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
-        $project->images()->detach();
+        foreach ($project->images as $image) {
+            Storage::disk('public')->delete($image->path);
+        }
+        $project->images()->delete();
         $project->technologies()->detach();
         $project->delete();
 

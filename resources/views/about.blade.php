@@ -11,9 +11,7 @@
             </p>
 
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ullam placeat voluptatibus explicabo optio blanditiis, sequi iure nostrum eaque dolorem, aliquid quo corporis id mollitia enim maxime commodi reprehenderit consectetur.
-                {{-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ullam placeat voluptatibus explicabo optio blanditiis, sequi iure nostrum eaque dolorem, aliquid quo corporis id mollitia enim maxime commodi reprehenderit consectetur. --}}
-                {{-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat ullam placeat voluptatibus explicabo optio blanditiis, sequi iure nostrum eaque dolorem, aliquid quo corporis id mollitia enim maxime commodi reprehenderit consectetur. --}}
+                
             </p>
 
         </div>

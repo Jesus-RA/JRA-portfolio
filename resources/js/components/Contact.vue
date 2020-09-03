@@ -3,6 +3,9 @@
         <div class="col-md-10 col-lg-8 mx-auto my-auto">
             <div class="card border border-dark myCard opaque" id="contactCard">
                 <h2 class="text-center">Get in touch</h2>
+                <p class="text-center mt-3 px-4">
+                    If you have some projects you need to build, just let me know!
+                </p>
                 <form id="contact">
                     <div class="container">
                         <div class="row">
@@ -32,6 +35,7 @@
 export default {
     methods: {
         sendMail(){
+            event.preventDefault();
             this.$swal.showLoading();
 
             const inputs = document.querySelectorAll('.myForm')
@@ -56,6 +60,7 @@ export default {
                             confirmButtonColor: '#6C6',
                         });
                         this.removeErrorClass(inputs);
+                        this.makeContactOpaque()
                     })
                     .catch(error => {
                         this.$swal({
@@ -108,9 +113,7 @@ export default {
                 input.value = '';
             }
         },
-        contactActive(){
-            event.target.classList.add('activeForm');
-            
+        makeContactOpaque(){
             const contactCard = document.getElementById('contactCard');
             contactCard.classList.remove('opaque');
             
@@ -122,6 +125,12 @@ export default {
                     input.classList.remove('activeForm');
                 }
             }
+        },
+        contactActive(){
+
+            event.target.classList.add('activeForm');
+            this.makeOpaqueContact()
+
         }
     }
 }
