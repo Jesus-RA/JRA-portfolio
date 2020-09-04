@@ -34,6 +34,19 @@
 <script>
 export default {
     methods: {
+        makeContactOpaque(){
+            const contactCard = document.getElementById('contactCard');
+            contactCard.classList.remove('opaque');
+            
+            const inputs = document.querySelectorAll('.myForm');
+
+            if(!this.validarCampos(inputs)){
+                contactCard.classList.add('opaque');
+                for(const input of inputs){
+                    input.classList.remove('activeForm');
+                }
+            }
+        },
         sendMail(){
             event.preventDefault();
             this.$swal.showLoading();
@@ -111,19 +124,6 @@ export default {
         cleanInputs(inputs){
             for(const input of inputs){
                 input.value = '';
-            }
-        },
-        makeContactOpaque(){
-            const contactCard = document.getElementById('contactCard');
-            contactCard.classList.remove('opaque');
-            
-            const inputs = document.querySelectorAll('.myForm');
-
-            if(!this.validarCampos(inputs)){
-                contactCard.classList.add('opaque');
-                for(const input of inputs){
-                    input.classList.remove('activeForm');
-                }
             }
         },
         contactActive(){
