@@ -129,7 +129,6 @@ export default {
         contactActive(){
             event.target.classList.add('activeForm');
             this.makeContactOpaque();
-            console.log('cambiado');
         }
     }
 }

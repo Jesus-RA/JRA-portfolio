@@ -1949,6 +1949,29 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
   methods: {
+    makeContactOpaque: function makeContactOpaque() {
+      var contactCard = document.getElementById('contactCard');
+      contactCard.classList.remove('opaque');
+      var inputs = document.querySelectorAll('.myForm');
+
+      if (!this.validarCampos(inputs)) {
+        contactCard.classList.add('opaque');
+
+        var _iterator = _createForOfIteratorHelper(inputs),
+            _step;
+
+        try {
+          for (_iterator.s(); !(_step = _iterator.n()).done;) {
+            var input = _step.value;
+            input.classList.remove('activeForm');
+          }
+        } catch (err) {
+          _iterator.e(err);
+        } finally {
+          _iterator.f();
+        }
+      }
+    },
     sendMail: function sendMail() {
       var _this = this;
 
@@ -1999,21 +2022,21 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       var inputs = document.querySelectorAll('.myForm');
       var empty = 0;
 
-      var _iterator = _createForOfIteratorHelper(inputs),
-          _step;
+      var _iterator2 = _createForOfIteratorHelper(inputs),
+          _step2;
 
       try {
-        for (_iterator.s(); !(_step = _iterator.n()).done;) {
-          var input = _step.value;
+        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
+          var input = _step2.value;
 
           if (input.value.length === 0) {
             empty++;
           }
         }
       } catch (err) {
-        _iterator.e(err);
+        _iterator2.e(err);
       } finally {
-        _iterator.f();
+        _iterator2.f();
       }
 
       if (empty === 3) {
@@ -2023,30 +2046,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
       return true;
     },
     addErrorClass: function addErrorClass(inputs) {
-      var _iterator2 = _createForOfIteratorHelper(inputs),
-          _step2;
-
-      try {
-        for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
-          var input = _step2.value;
-          input.classList.add('errorForm');
-          input.classList.add('errorSpan');
-        }
-      } catch (err) {
-        _iterator2.e(err);
-      } finally {
-        _iterator2.f();
-      }
-    },
-    removeErrorClass: function removeErrorClass(inputs) {
       var _iterator3 = _createForOfIteratorHelper(inputs),
           _step3;
 
       try {
         for (_iterator3.s(); !(_step3 = _iterator3.n()).done;) {
           var input = _step3.value;
-          input.classList.remove('errorForm');
-          input.classList.remove('errorSpan');
+          input.classList.add('errorForm');
+          input.classList.add('errorSpan');
         }
       } catch (err) {
         _iterator3.e(err);
@@ -2054,14 +2061,15 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         _iterator3.f();
       }
     },
-    cleanInputs: function cleanInputs(inputs) {
+    removeErrorClass: function removeErrorClass(inputs) {
       var _iterator4 = _createForOfIteratorHelper(inputs),
           _step4;
 
       try {
         for (_iterator4.s(); !(_step4 = _iterator4.n()).done;) {
           var input = _step4.value;
-          input.value = '';
+          input.classList.remove('errorForm');
+          input.classList.remove('errorSpan');
         }
       } catch (err) {
         _iterator4.e(err);
@@ -2069,32 +2077,24 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
         _iterator4.f();
       }
     },
-    makeContactOpaque: function makeContactOpaque() {
-      var contactCard = document.getElementById('contactCard');
-      contactCard.classList.remove('opaque');
-      var inputs = document.querySelectorAll('.myForm');
+    cleanInputs: function cleanInputs(inputs) {
+      var _iterator5 = _createForOfIteratorHelper(inputs),
+          _step5;
 
-      if (!this.validarCampos(inputs)) {
-        contactCard.classList.add('opaque');
-
-        var _iterator5 = _createForOfIteratorHelper(inputs),
-            _step5;
-
-        try {
-          for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
-            var input = _step5.value;
-            input.classList.remove('activeForm');
-          }
-        } catch (err) {
-          _iterator5.e(err);
-        } finally {
-          _iterator5.f();
+      try {
+        for (_iterator5.s(); !(_step5 = _iterator5.n()).done;) {
+          var input = _step5.value;
+          input.value = '';
         }
+      } catch (err) {
+        _iterator5.e(err);
+      } finally {
+        _iterator5.f();
       }
     },
     contactActive: function contactActive() {
       event.target.classList.add('activeForm');
-      this.makeOpaqueContact();
+      this.makeContactOpaque();
     }
   }
 });
