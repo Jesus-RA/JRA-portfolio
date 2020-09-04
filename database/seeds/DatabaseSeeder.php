@@ -16,30 +16,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $technologies = factory(Technology::class, 10)->create()
-            ->each(function ($technology) {
-                $technology->icon()->save(factory(App\Image::class)->make());
-            });
-
-        // $users = factory(User::class, 5)
-        //     ->create()
-        //     ->each(function ($user) use($technologies){
-        //         $user->technologies()->saveMany($technologies->random(mt_rand(2,8)));
-
-        //         $user->image()->save(factory(Image::class)->make());
+        // $technologies = factory(Technology::class, 10)->create()
+        //     ->each(function ($technology) {
+        //         $technology->icon()->save(factory(App\Image::class)->make());
         //     });
 
         $myUser = factory(User::class)->make();
+        $myUser->name = 'Jesús Ramírez Alejandro';
         $myUser->email = 'jesus.ra98@hotmail.com';
-        $myUser->password = Hash::make('jamon123');
+        $myUser->password = Hash::make('JRAkiritoPK');
         $myUser->save();
 
-        $myUser->projects()
-                ->save( factory(Project::class)->create(['owner_id' => $myUser->id]) )
-                ->each(function ($project) use ($technologies){
-                    $project->technologies()->saveMany($technologies->random(2,8));
-                    $project->images()->saveMany( factory(Image::class, mt_rand(3, 5))->make() );
-                });
+        // $myUser->projects()
+        //         ->save( factory(Project::class)->create(['owner_id' => $myUser->id]) )
+        //         ->each(function ($project) use ($technologies){
+        //             $project->technologies()->saveMany($technologies->random(2,8));
+        //             $project->images()->saveMany( factory(Image::class, mt_rand(3, 5))->make() );
+        //         });
 
         // $projects = factory(Project::class, 7)
         //     ->make()

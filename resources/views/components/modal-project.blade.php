@@ -29,7 +29,7 @@
             {{-- End Carousel --}}
             <div class="modal-body">
                 <h2 class="card-title text-center">{{$project->name}}</h2>
-                <p class="card-text" class="card-text">
+                <p class="card-text" class="card-text text-justify">
                     {{$project->description}}
                 </p>
                 <p class="card-text">

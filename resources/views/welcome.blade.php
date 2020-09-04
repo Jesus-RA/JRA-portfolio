@@ -2,7 +2,7 @@
 
 @section('content')
     <div class="hero-image">
-        <div class="d-flex align-items-center h-100 ">
+        <div class="d-flex align-items-center h-100">
             <div class="col-12 col-md-7 offset-md-1">
                 <span class="d-block mb-1 text-md-left ml-2 ml-md-0"> <strong>Hello, my name is</strong> </span>
                 <h1 class="name text-md-left text-center">Jesús Ramírez Alejandro</h1>
@@ -40,8 +40,7 @@
 
 <style>
     .hero-image{
-        /* background-image: url('https://images.unsplash.com/photo-1510519138101-570d1dca3d66?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1631&q=80'); */
-        background-image: url('../img/background/large.jpg');
+        background-image: url('../img/background/me-hero.jpg');
         background-repeat: no-repeat;
         background-position: center;
         background-size: cover;
@@ -64,10 +63,11 @@
 
     @media (max-width: 576px){
         .hero-image{
-            background-image: url('../img/background/small.jpg');
+            background-image: url('../img/background/portrait2.jpg');
             background-repeat: no-repeat;
-            background-position: center;
+            /* background-position: bottom; */
             background-size: cover;
+            /* height: 86vh; */
         }
     }
 </style>

@@ -4,7 +4,7 @@
         <div class="col-md-12 text-white  my-5">
             <h2 class="mb-3">About me</h2>
             
-            <p>
+            <p class="text-justify">
                 I'am a Computer Science student and self taught web developer,
                 passionate for learn something new every day, I really enjoy learn
                 what I like!
@@ -17,15 +17,17 @@
         </div>
 
         <div class="col-md-12 text-white my-5">
-            <h4>Technologies:</h4>
-            <ul class="technologies">
-                @foreach ($technologies as $technology)
-                <li class="technology">
-                    <img src="{{ Storage::url($technology->icon->path) }}" alt="{{ $technology->name }}" width="30" height="30">
-                    <span class="ml-3 font-weigth-bold">{{ $technology->name }}</span>
-                </li>
-                @endforeach
-            </ul>
+            @if ( count($technologies) > 0)
+                <h4>Technologies:</h4>
+                <ul class="technologies">
+                    @foreach ($technologies as $technology)
+                    <li class="technology">
+                        <img src="{{ Storage::url($technology->icon->path) }}" alt="{{ $technology->name }}" width="30" height="30">
+                        <span class="ml-3 font-weigth-bold">{{ $technology->name }}</span>
+                    </li>
+                    @endforeach
+                </ul>
+            @endif
         </div>
 
     </div>
