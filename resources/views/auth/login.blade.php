@@ -8,7 +8,7 @@
 
             <form
                 method="POST"
-                action="{{ route('login.post') }}"
+                action="{{ route('login') }}"
                 {{-- class="justify-content-center" --}}
             >
                 @csrf
