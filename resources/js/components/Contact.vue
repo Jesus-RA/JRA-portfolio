@@ -60,7 +60,7 @@ export default {
                             confirmButtonColor: '#6C6',
                         });
                         this.removeErrorClass(inputs);
-                        this.makeContactOpaque()
+                        this.makeContactOpaque();
                     })
                     .catch(error => {
                         this.$swal({
