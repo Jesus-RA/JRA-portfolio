@@ -61,7 +61,8 @@ class ProjectController extends Controller
                 'folder' => 'projects-uploads',
             ];
     
-            $image_url = cloudinary()->upload( $request->file('icon ')->getRealPath(), $options )->getSecurePath();
+            // $image_url = cloudinary()->upload( $request->file('image ')->getRealPath(), $options )->getSecurePath();
+            $image_url = cloudinary()->upload( $image->getRealPath(), $options )->getSecurePath();
 
             $newImage = new Image;
             $newImage->path = $image_url; //$image->store('projects-images', 'public');
@@ -123,7 +124,7 @@ class ProjectController extends Controller
             $options = [
                 'folder' => 'projects-uploads',
             ];
-            $image_url = cloudinary()->upload( $request->file('icon')->getRealPath(), $options )->getSecurePath();
+            $image_url = cloudinary()->upload( $request->file('image')->getRealPath(), $options )->getSecurePath();
     
             $image = new Image();
             $image->path = $image_url;//$request->image;
