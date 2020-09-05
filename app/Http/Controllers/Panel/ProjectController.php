@@ -56,8 +56,15 @@ class ProjectController extends Controller
         $images = $request->file('image');
 
         foreach($images as $image){
+
+            $options = [
+                'folder' => 'projects-uploads',
+            ];
+    
+            $image_url = cloudinary()->upload( $request->file('icon ')->getRealPath(), $options )->getSecurePath();
+
             $newImage = new Image;
-            $newImage->path = $image->store('projects-images', 'public');
+            $newImage->path = $image_url; //$image->store('projects-images', 'public');
             $project->images()->save($newImage);
             $newImage->save();
         }
@@ -110,11 +117,16 @@ class ProjectController extends Controller
             'technologies' => ['required'],
         ]);
 
-        if($request->hasFile('image')){
-            $request->image = $request->file('image')->store('projects-images', 'public');
+        if($request->hasFile('image')){            
+            // $request->image = $request->file('image')->store('projects-images', 'public');
+            
+            $options = [
+                'folder' => 'projects-uploads',
+            ];
+            $image_url = cloudinary()->upload( $request->file('icon')->getRealPath(), $options )->getSecurePath();
     
             $image = new Image();
-            $image->path = $request->image;
+            $image->path = $image_url;//$request->image;
     
             $project->images()->save($image);
             

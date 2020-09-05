@@ -29,7 +29,7 @@
 
                     <div class="form-group">
                         <img
-                            src="{{ Storage::url($technology->icon->path) }}"
+                            src="{{ $technology->icon->path }}"
                             alt="technology{{ $technology->name }}"
                             width="100"
                         >

@@ -86,7 +86,7 @@
                         <span class="font-weight-bold mb-3 d-block @error('image') text-danger @enderror">Images</span>
                         
                         @foreach ($project->images as $image)
-                            <img src="{{ Storage::url($image->path) }}" alt="Image{{$project->name}}" height="100" width="100">
+                            <img src="{{ $image->path }}" alt="Image{{$project->name}}" height="100" width="100">
                             
                         @endforeach
 

@@ -25,7 +25,8 @@
                             <tr>
                                 <td>{{ $technology->id }}</td>
                                 <td>
-                                    <img src="{{ Storage::url($technology->icon->path) }}" alt="technology{{$technology->name}}" width="100">
+                                    {{-- <img src="{{ Storage::url($technology->icon->path) }}" alt="technology{{$technology->name}}" width="100"> --}}
+                                    <img src="{{$technology->icon->path}}" alt="" width="100">
                                 </td>
                                 <td>{{ $technology->name }}</td>
                                 <td>

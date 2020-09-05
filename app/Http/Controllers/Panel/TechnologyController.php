@@ -48,8 +48,14 @@ class TechnologyController extends Controller
         $technology->fill($request->all());
         $technology->save();
         
+        $options = [
+            'folder' => 'technologies-uploads',
+        ];
+
+        $image_url = cloudinary()->upload( $request->file('icon')->getRealPath(), $options )->getSecurePath();
+
         $image = new Image();
-        $image->path =  $request->file('icon')->store('technologies-uploads', 'public');
+        $image->path =  $image_url;//$request->file('icon')->store('technologies-uploads', 'public');
         $technology->icon()->save($image);
         
         return redirect()->route('technologies.index')->withSuccess("$technology->name was created successfully!");
@@ -94,8 +100,15 @@ class TechnologyController extends Controller
         $technology->save();
 
         if($request->hasFile('icon')){
+
+            $options = [
+                'folder' => 'technologies-uploads',
+            ];
+    
+            $image_url = cloudinary()->upload( $request->file('icon')->getRealPath(), $options )->getSecurePath();
+
             $image = new Image();
-            $image->path = $request->file('icon')->store('technologies-uploads', 'public');
+            $image->path = $image_url;//$request->file('icon')->store('technologies-uploads', 'public');
             
             $technology->icon()->delete();
             $technology->icon()->save($image);

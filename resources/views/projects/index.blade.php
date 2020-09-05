@@ -29,7 +29,7 @@
                                 <tr class="text-center">
                                     <td>
                                         <img
-                                            src="{{ Storage::url($project->images->first()->path) }}"
+                                            src="{{ $project->images->first()->path }}"
                                             alt=""
                                             width="100"
                                             height="100"

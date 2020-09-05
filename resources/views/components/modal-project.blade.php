@@ -7,7 +7,7 @@
                     @foreach ($project->images as $image)
                         <div class="carousel-item {{$loop->first ? 'active' : ''}}" data-interval="3500">
                             <img 
-                                src="{{ Storage::url($image->path) }}"
+                                src="{{ $image->path }}"
                                 alt=""
                                 class="d-block w-100 card-img-top projectImage"
                                 height="300"

@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="form-group">
-                        <input type="file" name="icon" class="myForm @error('icon') errorForm @enderror">
+                        <input type="file" name="icon" class="myForm @error('icon') errorForm @enderror" accept="image/*">
                         @error('icon')
                             <span class="invalid-feedback d-block errorSpan">
                                 <strong>{{ $message }}</strong>
