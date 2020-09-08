@@ -31,7 +31,7 @@
             @endif
         </section>
 
-        <section id="contact" class="">
+        <section id="contact" class="pt-3">
             <contact></contact>
         </section>
 
