@@ -10,10 +10,6 @@
                 what I like!
             </p>
 
-            <p>
-                
-            </p>
-
         </div>
 
         <div class="col-md-12 text-white my-5">
