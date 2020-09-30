@@ -8,7 +8,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>JRA Portfolio</title>
-
+    <meta name="description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!" />
+    
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="JRA Web Developer">
     <meta itemprop="description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!">
