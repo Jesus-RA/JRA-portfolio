@@ -10,7 +10,7 @@
     <title>JRA Portfolio</title>
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="JRA Portfolio">
+    <meta itemprop="name" content="JRA Web Developer">
     {{-- <meta itemprop="description" content="Descripcion"> --}}
     <meta itemprop="image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
 
@@ -24,11 +24,11 @@
     <meta name="twitter:image:src" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="Titulo" />
+    <meta property="og:title" content="JRA Web Developer" />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://jesusra.herokuapp.com/" />
     <meta property="og:image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
-    <meta property="og:description" content="Descripcion" />
+    {{-- <meta property="og:description" content="Descripcion" /> --}}
     <meta property="og:site_name" content="JRA Web Developer" />
 
     <!-- Scripts -->
