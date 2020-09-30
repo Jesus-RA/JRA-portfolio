@@ -7,7 +7,29 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>My Portfolio</title>
+    <title>JRA Portfolio</title>
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="JRA Portfolio">
+    {{-- <meta itemprop="description" content="Descripcion"> --}}
+    <meta itemprop="image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="JRA Web Developer">
+    {{-- <meta name="twitter:description" content="Descripcion"> --}}
+    <meta name="twitter:creator" content="@author_handle">
+    <!-- Twitter summary card with large image. Al menos estas medidas 280x150px -->
+    <meta name="twitter:image:src" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="Titulo" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://jesusra.herokuapp.com/" />
+    <meta property="og:image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
+    <meta property="og:description" content="Descripcion" />
+    <meta property="og:site_name" content="JRA Web Developer" />
 
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
