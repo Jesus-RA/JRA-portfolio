@@ -11,14 +11,14 @@
 
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="JRA Web Developer">
-    {{-- <meta itemprop="description" content="Descripcion"> --}}
+    <meta itemprop="description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!">
     <meta itemprop="image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@publisher_handle">
     <meta name="twitter:title" content="JRA Web Developer">
-    {{-- <meta name="twitter:description" content="Descripcion"> --}}
+    <meta name="twitter:description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!">
     <meta name="twitter:creator" content="@author_handle">
     <!-- Twitter summary card with large image. Al menos estas medidas 280x150px -->
     <meta name="twitter:image:src" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
@@ -28,7 +28,7 @@
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://jesusra.herokuapp.com/" />
     <meta property="og:image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
-    {{-- <meta property="og:description" content="Descripcion" /> --}}
+    <meta property="og:description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!" />
     <meta property="og:site_name" content="JRA Web Developer" />
 
     <!-- Scripts -->
