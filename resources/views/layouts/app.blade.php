@@ -4,10 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>JRA Portfolio</title>
+    <meta name="author" content="Jesús Ramírez Alejandro">
     <meta name="description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!" />
 
     <!-- Schema.org markup for Google+ -->
@@ -21,7 +19,7 @@
     <meta name="twitter:description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!">
     <meta name="twitter:creator" content="@JesusRA1P">
     <!-- Twitter summary card with large image. Al menos estas medidas 280x150px -->
-    <meta name="twitter:image:src" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601432156/portfolio_bqa2ph.png">
+    {{-- <meta name="twitter:image:src" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601432156/portfolio_bqa2ph.png"> --}}
 
     <!-- Open Graph data -->
     <meta property="og:title" content="JRA Web Developer" />
@@ -30,12 +28,15 @@
     <meta property="og:image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601432156/portfolio_bqa2ph.png" />
     <meta property="og:description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!" />
     <meta property="og:site_name" content="JRA Web Developer" />
+    <meta property="fb:app_id" content="794563961346061">
+
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
     <script src="{{ secure_asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-
 
     <!-- Styles -->
     <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
