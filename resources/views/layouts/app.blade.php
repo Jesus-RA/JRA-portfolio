@@ -31,7 +31,7 @@
     <meta property="fb:app_id" content="794563961346061">
 
     <!-- Linkedin -->
-    <meta property="og:type" content="[website]" />
+    <meta property="og:type" content="[Website]" />
     <meta name="image" property="og:image" content="[https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png]">
 
     <!-- CSRF Token -->
