@@ -162,6 +162,13 @@
             }
         }
 
+        window.onload = function(){
+            $(function(){
+                if(window.location.protocol==="http:")
+                    window.location.protocol="https:";
+            });
+        }
+
     </script>
 </body>
 </html>
