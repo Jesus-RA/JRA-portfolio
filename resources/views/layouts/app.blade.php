@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" prefix="http://ogp.me/ns#" itemscope itemtype="http://schema.org/WebPage">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +26,7 @@
     <!-- Open Graph data -->
     <meta property="og:title" content="JRA Web Developer" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://jesusra.herokuapp.com/" />
+    <meta property="og:url" content="https://www.jesusra.com/" />
     <meta property="og:image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601432156/portfolio_bqa2ph.png" />
     <meta property="og:description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!" />
     <meta property="og:site_name" content="JRA Web Developer" />
