@@ -6,7 +6,8 @@
                 <div class="carousel-item {{$loop->first ? 'active' : ''}}" data-interval="3500">
                     <img 
                         src="{{ $image->path }}"
-                        alt=""
+                        alt="{{ $project->name }}"
+                        loading="lazy"
                         class="d-block w-100 card-img-top projectImage"
                         height="200"
                     >                

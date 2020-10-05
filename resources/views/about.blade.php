@@ -18,7 +18,7 @@
                 <ul class="technologies">
                     @foreach ($technologies as $technology)
                     <li class="technology">
-                        <img src="{{ $technology->icon->path }}" alt="{{ $technology->name }}" width="30" height="30">
+                        <img src="{{ $technology->icon->path }}" alt="{{ $technology->name }}" loading="lazy" width="30" height="30">
                         <span class="ml-3 font-weigth-bold">{{ $technology->name }}</span>
                     </li>
                     @endforeach
@@ -31,7 +31,7 @@
     <div class="col-md-6 my-auto">
         <div class="col-12 col-lg-8 text-center mx-auto">
             <div class="card myPhoto">
-                <img src="{{ secure_asset('img/me/me.jpg') }}" alt="" width="300" height="300" class="card-img-top">
+                <img src="{{ secure_asset('img/me/me.jpg') }}" alt="me" loading="lazy" width="300" height="300" class="card-img-top">
             </div>
         </div>
     </div>
