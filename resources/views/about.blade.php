@@ -29,7 +29,7 @@
     </div>
 
     <div class="col-md-6 my-auto">
-        <div class="col-12 col-lg-8 text-center mx-auto">
+        <div class="col-11 col-lg-7 text-center mx-auto">
             <div class="card myPhoto">
                 <img src="{{ secure_asset('img/me/me.jpg') }}" alt="me" loading="lazy" width="300" height="300" class="card-img-top">
             </div>
