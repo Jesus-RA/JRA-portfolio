@@ -19,7 +19,9 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
-    Redirect 301 /jesusra.com /www.jesusra.com
+    RewriteEngine On
+    RewriteCond %{HTTP_HOST} !^www.jesusra.com$
+    RewriteRule ^(.*)$ https://www.jesusra.com/$1 [R=301,L]
 
     RewriteEngine On
     RewriteCond %{HTTPS}!=on
