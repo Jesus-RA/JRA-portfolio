@@ -22,9 +22,10 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 Vue.use(VueSweetalert2);
 Vue.component('delete-project', require('./components/DeleteProject.vue').default);
-Vue.component('technologies', require('./components/Technologies.vue').default);
+Vue.component('technologies', require('./components/Technology.vue').default);
 Vue.component('delete-technology', require('./components/DeleteTechnology.vue').default);
 Vue.component('contact', require('./components/Contact.vue').default);
+Vue.component('remove-project-image', require('./components/RemoveProjectImage.vue').default);
 
 // Ver los paquetes instalados
 // console.log(Vue.prototype)   

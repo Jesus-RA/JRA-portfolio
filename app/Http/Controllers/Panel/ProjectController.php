@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Panel;
 use App\Image;
 use App\Project;
 use App\Technology;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ProjectRequest;
@@ -12,11 +13,6 @@ use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
-
-    public function __construct()
-    {
-        // $this->middleware('auth');
-    }
 
     /**
      * Display a listing of the resource.
@@ -48,8 +44,7 @@ class ProjectController extends Controller
      */
     public function store(ProjectRequest $request)
     {   
-        $project = new Project();
-        $project->fill($request->all());
+        $project = Project::make($request->all());
         $project->owner_id = auth()->user()->id;
         $project->save();
 
@@ -61,13 +56,14 @@ class ProjectController extends Controller
                 'folder' => 'projects-uploads',
             ];
     
-            // $image_url = cloudinary()->upload( $request->file('image ')->getRealPath(), $options )->getSecurePath();
-            $image_url = cloudinary()->upload( $image->getRealPath(), $options )->getSecurePath();
+            $response = \Cloudinary\Uploader::upload( $image->getRealPath(), $options );
 
-            $newImage = new Image;
-            $newImage->path = $image_url; //$image->store('projects-images', 'public');
-            $project->images()->save($newImage);
-            $newImage->save();
+            $project->images()->save(
+                Image::make([
+                    'path' => $response['secure_url'],
+                    'public_id' => $response['public_id'
+                ]])
+            );
         }
 
         $technologies = explode(",", $request->technologies);
@@ -100,7 +96,14 @@ class ProjectController extends Controller
     public function edit(Project $project)
     {
         $technologies = Technology::all(['id', 'name']);
-        return view('projects.edit', compact('project', 'technologies'));
+        
+        $projectTechnologies = $project->technologies->map(function($technology){
+            return $technology->id;
+        });
+
+        $projectTechnologies = implode(',' , $projectTechnologies->toArray());
+
+        return view('projects.edit', compact('project', 'technologies', 'projectTechnologies'));
     }
 
     /**
@@ -119,19 +122,18 @@ class ProjectController extends Controller
         ]);
 
         if($request->hasFile('image')){            
-            // $request->image = $request->file('image')->store('projects-images', 'public');
             
             $options = [
                 'folder' => 'projects-uploads',
             ];
-            $image_url = cloudinary()->upload( $request->file('image')->getRealPath(), $options )->getSecurePath();
-    
-            $image = new Image();
-            $image->path = $image_url;//$request->image;
-    
-            $project->images()->save($image);
-            
-            $image->save();
+            $response = \Cloudinary\Uploader::upload( $request->file('image')->getRealPath(), $options );
+
+            $project->images()->save(
+                Image::make([
+                    'path' => $response['secure_url'],
+                    'public_id' => $response['public_id']
+                ])
+            );
         }
 
         $project->fill($request->all());
@@ -152,7 +154,8 @@ class ProjectController extends Controller
     public function destroy(Project $project)
     {
         foreach ($project->images as $image) {
-            Storage::disk('public')->delete($image->path);
+            \Cloudinary\Uploader::destroy($image->public_id);
+            // Storage::disk('public')->delete($image->path);
         }
         $project->images()->delete();
         $project->technologies()->detach();
@@ -161,4 +164,12 @@ class ProjectController extends Controller
         // return redirect()->route('projects.index')->withSuccess("$project->name was deleted successfully!");
         return $project->name;
     }
+
+    public function removeImage(Image $image){
+        $image->delete();
+        \Cloudinary\Uploader::destroy($image->public_id);
+        // Storage::disk('public')->delete($image->path);
+        return  ['success' => 'Image deleted'];
+    }
+
 }

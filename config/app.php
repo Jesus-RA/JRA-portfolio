@@ -15,6 +15,10 @@ return [
 
     'name' => env('APP_NAME', 'Laravel'),
 
+    'api_key' => env('CLOUDINARY_API_KEY', "771659268351773"),
+    'cloud_name' => env('CLOUDINARY_CLOUD_NAME', "hkzhuqcgm"),
+    'api_secret' => env('CLOUDINARY_API_SECRET', "c0xFQad1yO3XxNGbh6vexC3CFR8"),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment

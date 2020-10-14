@@ -21,4 +21,8 @@ class ContactController extends Controller
         return response()->json(['success' => 'Mensaje enviado con exito!']);
         // return redirect()->route('contact');
     }
+
+    public function contact(){
+        return redirect()->route('home#contact');
+    }
 }

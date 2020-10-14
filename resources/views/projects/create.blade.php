@@ -41,7 +41,8 @@
 
                     <div class="form-group">
                         <technologies
-                            :technologies="{{ json_encode($technologies) }}"
+                            :technologies="{{ $technologies }}"
+                            current-technologies="{{ old('technologies') }}"
                         ></technologies>
                         @error('technologies')
                             <span class="invalid-feedback d-block errorSpan">
@@ -80,6 +81,16 @@
                         @enderror
                     </div>
 
+                    {{-- <div class="custom-file text-left">
+                        <input type="file" name="image[]" class="custom-file-input bg-transparent" id="customFile">
+                        <label class="custom-file-label bg-transparent @error('image') invalid-feedback @enderror" for="customFile">Choose file</label>
+                        @error('image[]')
+                            <span class="invalid-feedback d-block errorSpan">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div> --}}
+                    
                     <div class="form-group">
                         <span class="font-weight-bold mr-5 @error('image') text-danger @enderror">Image</span>
                         <input
@@ -96,9 +107,8 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-dark btn-block border border-secondary">Add project</button>
+                        <button type="submit" class="btn btn-outline-light btn-block border border-secondary">Add project</button>
                     </div>
-                    
                 </form>
             </div>
         </div>

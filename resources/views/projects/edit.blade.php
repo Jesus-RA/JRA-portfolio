@@ -43,7 +43,7 @@
                     <div class="form-group">
                         <technologies
                             :technologies="{{ $technologies }}"
-                            :project="{{ json_encode($project->technologies) }}"
+                            current-technologies="{{ old('technologies') ?? $projectTechnologies }}"
                         ></technologies>
                         @error('technologies')
                             <span class="invalid-feedback d-block errorSpan">
@@ -86,8 +86,15 @@
                         <span class="font-weight-bold mb-3 d-block @error('image') text-danger @enderror">Images</span>
                         
                         @foreach ($project->images as $image)
-                            <img src="{{ $image->path }}" alt="Image{{$project->name}}" height="100" width="100">
-                            
+                            <div class="d-inline projectImage">
+                                <img src="{{ $image->path }}" alt="Image{{$project->name}}" height="100" width="100">
+                                <remove-project-image
+                                    class="deleteButton"
+                                    image-id="{{ $image->id }}"
+                                    project-id="{{ $project->id }}"
+                                >
+                                </remove-project-image>
+                            </div>
                         @endforeach
 
                         <input
@@ -103,7 +110,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-dark btn-block">Save Changes</button>
+                        <button type="submit" class="btn btn-outline-light btn-block">Save Changes</button>
                     </div>
                 </form>
             </div>

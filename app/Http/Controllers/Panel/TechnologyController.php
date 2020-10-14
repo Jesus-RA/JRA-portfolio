@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Storage;
 
 class TechnologyController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -44,18 +45,15 @@ class TechnologyController extends Controller
             'icon' => 'required|image',
         ]);
 
-        $technology = new Technology();
-        $technology->fill($request->all());
-        $technology->save();
+        $technology = Technology::create($request->all());
         
         $options = [
             'folder' => 'technologies-uploads',
         ];
 
-        $image_url = cloudinary()->upload( $request->file('icon')->getRealPath(), $options )->getSecurePath();
+        $response = \Cloudinary\Uploader::upload( $request->file('icon')->getRealPath(), $options );
 
-        $image = new Image();
-        $image->path =  $image_url;//$request->file('icon')->store('technologies-uploads', 'public');
+        $image = Image::make(['path' => $response['secure_url'], 'public_id' => $response['public_id']]);
         $technology->icon()->save($image);
         
         return redirect()->route('technologies.index')->withSuccess("$technology->name was created successfully!");
@@ -105,12 +103,13 @@ class TechnologyController extends Controller
                 'folder' => 'technologies-uploads',
             ];
     
-            $image_url = cloudinary()->upload( $request->file('icon')->getRealPath(), $options )->getSecurePath();
+            $response = \Cloudinary\Uploader::upload( $request->file('icon')->getRealPath(), $options );
 
-            $image = new Image();
-            $image->path = $image_url;//$request->file('icon')->store('technologies-uploads', 'public');
+            $image = Image::make(['path' => $response['secure_url'], 'public_id' => $response['public_id']]);
             
+            \Cloudinary\Uploader::destroy($technology->icon->public_id);
             $technology->icon()->delete();
+
             $technology->icon()->save($image);
         }
 
@@ -125,7 +124,7 @@ class TechnologyController extends Controller
      */
     public function destroy(Technology $technology)
     {
-        Storage::disk('public')->delete($technology->icon->path);
+        \Cloudinary\Uploader::destroy($technology->icon->public_id);
 
         $technology->icon()->delete();
         $technology->delete();

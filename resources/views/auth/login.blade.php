@@ -50,7 +50,7 @@
                 </div> --}}
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-dark border border-secondary btn-block">
+                    <button type="submit" class="btn btn-outline-light border border-secondary btn-block">
                         {{ __('Login') }}
                     </button>
 

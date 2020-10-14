@@ -45,7 +45,7 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-dark btn-block border border-secondary">Save Changes</button>
+                        <button type="submit" class="btn btn-outline-light btn-block border border-secondary">Save Changes</button>
                     </div>
                 </form>
             </div>
