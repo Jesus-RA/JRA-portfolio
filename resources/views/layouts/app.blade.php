@@ -30,6 +30,10 @@
     <meta property="og:site_name" content="JRA Web Developer" />
     <meta property="fb:app_id" content="794563961346061">
 
+    <meta property="og:image:secure_url" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
+    <meta property="og:image:width" content="1015">
+    <meta property="og:image:height" content="1080">
+
     <!-- Linkedin -->
     <meta property="og:type" content="[Website]" />
     <meta name="image" property="og:image" content="[https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png]">
@@ -167,12 +171,12 @@
             }
         }
 
-        window.onload = function(){
-            $(function(){
-                if(window.location.protocol==="http:")
-                    window.location.protocol="https:";
-            });
-        }
+        // window.onload = function(){
+        //     $(function(){
+        //         if(window.location.protocol==="http:")
+        //             window.location.protocol="https:";
+        //     });
+        // }
 
     </script>
 </body>

@@ -21,6 +21,9 @@
 
     Redirect 301 /jesusra.com /www.jesusra.com
 
+    RewriteCond %{HTTPS} != on
+    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R,L]
+
     #CORS
     <FilesMatch ".(eot|otf|ttf|woff|woff2)">
         Header always set Access-Control-Allow-Origin "*"
