@@ -19,6 +19,8 @@
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteRule ^ index.php [L]
 
+    Redirect 301 /jesusra.com /www.jesusra.com
+
     #CORS
     <FilesMatch ".(eot|otf|ttf|woff|woff2)">
         Header always set Access-Control-Allow-Origin "*"
