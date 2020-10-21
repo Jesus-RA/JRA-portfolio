@@ -20,9 +20,9 @@
     RewriteRule ^ index.php [L]
 
     # Redirection no wwww to wwww
-    RewriteEngine On
-    RewriteCond %{HTTP_HOST} ^jesusra.com [NC]
-    RewriteRule ^(.*)$ https://www.jesusra.com/$1 [L,R=301,NC]
+    #RewriteEngine On
+    #RewriteCond %{HTTP_HOST} ^jesusra.com [NC]
+    #RewriteRule ^(.*)$ https://www.jesusra.com/$1 [L,R=301,NC]
 
     # Redirection http to https
     RewriteEngine On
