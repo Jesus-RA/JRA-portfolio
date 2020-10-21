@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5 ">
         <div class="row text-white">
-            <div class=" col-sm-12 col-md-10 col-lg-6 col-xl-6 mx-auto text-center">
+            <div class="col-sm-12 col-md-10 col-lg-6 col-xl-6 mx-auto text-center">
                 <h1 class="mb-5">Create project</h1>
                 <form
                     action="{{route('projects.store')}}"
@@ -107,10 +107,35 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-outline-light btn-block border border-secondary">Add project</button>
+                        <button
+                            type="submit"
+                            class="btn btn-outline-light btn-block border border-secondary"
+                            id="saveButton"
+                            onclick="showLoading()"
+                        >Add project</button>
+
+                        <button class="d-none btn btn-outline-light btn-block" type="button" disabled id="loadingButton">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        
+        function showLoading(){
+
+            let saveButton = document.getElementById('saveButton')
+            let loadingButton = document.getElementById('loadingButton')
+
+            saveButton.classList.add('d-none');
+            loadingButton.classList.remove('d-none');
+
+        }
+    </script>
 @endsection

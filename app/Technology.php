@@ -26,4 +26,8 @@ class Technology extends Model
     public function icon(){
         return $this->morphOne(Image::class, 'imageable');
     }
+
+    public function technologable(){
+        return $this->morphTo();
+    }
 }

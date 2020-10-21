@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Project;
 use App\Technology;
+use App\Profile;
 
 class HomeController extends Controller
 {
@@ -27,6 +28,8 @@ class HomeController extends Controller
     {
         $projects = Project::all();
         $technologies = Technology::all();
-        return view('welcome', compact('projects', 'technologies'));
+        $profile = Profile::findOrFail(1);
+        
+        return view('welcome', compact('projects', 'technologies', 'profile'));
     }
 }

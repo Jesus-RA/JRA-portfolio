@@ -25,11 +25,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/contact', 'ContactController@store')->name('contacts.store');
 
 Route::get('/', 'HomeController@index')->name('home');
-// Route::get('/#contact')->name('contact');
-
-// Route::delete('/projects/image/{image}/delete', 'ProjectController@removeImage');
-
-
-// Route::get('/about', 'HomeController@index')->name('about');
 
 Route::get('/#contact', 'ContactController@contact')->name('contact');
+
+Route::resource('profiles', 'ProfileController');
