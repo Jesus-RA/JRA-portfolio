@@ -59,7 +59,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-dark myNav shadow-lg  {{auth()->user() == null ? 'fixed-top' : ''}}">
             <div class="container">
-                {{-- <a class="navbar-brand" href="{{ url('/') }}"> --}}
+                
                 <a id="titulo" class="navbar-brand" href="{{ auth()->user() ? route('home') : '#top' }}" onclick="clean()">
                     {{ config('app.name', 'Laravel') }}
                 </a>
@@ -75,16 +75,7 @@
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto" id="menu">
-                        {{-- <li class="nav-item">
-                            <a href="{{route('panel')}}" class="nav-link">
-                                Panel
-                            </a>
-                        </li> --}}
-                        @if (Auth::user())
-                            <li class="nav-item">
-                                <a href="{{route('panel')}}" class="nav-link">Panel</a>
-                            </li>
-                        @endif
+
                         <li class="nav-item">
                             <a href="/#about" class="nav-link myA" onclick="active()">About</a>
                         </li>
@@ -95,16 +86,16 @@
                             <a href="/#contact" class="nav-link myA" onclick="active()">Contact</a>
                         </li>
                         <!-- Authentication Links -->
-                        @guest
-                            {{-- <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                            </li> --}}
-                            {{-- @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif --}}
-                        @else
+                        @auth
+
+                            <li class="nav-item">
+                                <a href="{{route('panel')}}" class="nav-link">Panel</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a href="{{route('profiles.show', auth()->user()->profile)}}" class="nav-link">Profile</a>
+                            </li>
+
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
@@ -113,8 +104,8 @@
                                 <div class="dropdown-menu dropdown-menu-right bg-dark" aria-labelledby="navbarDropdown">
                                     
                                     <a class="dropdown-item bg-dark text-white" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                                    onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -123,17 +114,17 @@
                                     </form>
                                 </div>
                             </li>
-                        @endguest
+                            
+                        @endauth
                     </ul>
                 </div>
             </div>
         </nav>
 
         <main class="">
-            {{-- @yield('image-hero') --}}
             @if (session('success'))
                 <div class="container mt-5">
-                    <div class="alert alert-success text-center col-md-8 mx-auto">
+                    <div class="alert alert-success text-center col-md-8 mx-auto fade show" role="alert">
                         {{ session('success') }}
                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                             <span aria-hidden="true">&times;</span>

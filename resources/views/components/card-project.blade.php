@@ -3,7 +3,7 @@
     <div id="carousel{{$project->id}}" class="carousel slide carousel-fade hover touch" data-ride="carousel">
         <div class="carousel-inner">
             @foreach ($project->images as $image)
-                <div class="carousel-item {{$loop->first ? 'active' : ''}}" data-interval="3500">
+                <div class="carousel-item bg-transparent {{$loop->first ? 'active' : ''}}" data-interval="3500">
                     <img 
                         src="{{ $image->path }}"
                         alt="{{ $project->name }}"
@@ -27,7 +27,7 @@
     </div>
 
     <div class="card-body">
-        <h3 class="card-title text-center font-weight-bold">{{$project->name}}</h3>
+        <h3 class="text-center font-weight-bold">{{$project->name}}</h3>
         <button type="button" class="btn btn-outline-light btn-block py-1" data-toggle="modal" data-target="#exampleModal{{$project->id}}">
             See project
         </button>

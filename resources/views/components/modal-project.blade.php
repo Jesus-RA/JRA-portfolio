@@ -5,7 +5,7 @@
             <div id="carousel{{$project->id}}" class="carousel slide carousel-fade hover touch" data-ride="carousel">
                 <div class="carousel-inner">
                     @foreach ($project->images as $image)
-                        <div class="carousel-item {{$loop->first ? 'active' : ''}}" data-interval="3500">
+                        <div class="carousel-item bg-transparent {{$loop->first ? 'active' : ''}}" data-interval="3500">
                             <img 
                                 src="{{ $image->path }}"
                                 alt="{{ $project->name }}"

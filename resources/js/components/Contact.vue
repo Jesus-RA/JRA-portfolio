@@ -21,7 +21,7 @@
                                 <textarea name="message" id="message" rows="5" class="myForm myTextarea" placeholder="Leave a message" autocomplete="off" @keyup="contactActive" ></textarea>
                             </div>
                             <div class="col-12">
-                                <button type="button" class="btn btn-dark btn-block" @click="sendMail">Send</button>
+                                <button type="button" class="btn btn-outline-light btn-block" @click="sendMail">Send</button>
                             </div>
                         </div>
                     </div>

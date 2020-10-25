@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 // Auth::routes(['register' => false, 'reset' => false]);
 
 // Login route
-Route::get('/JRA/login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::get('/JRA/login', 'Auth\LoginController@showLoginForm')->name('show.login');
 Route::post('login', 'Auth\LoginController@login')->name('login');
 
 // Logout route
@@ -25,9 +25,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::post('/contact', 'ContactController@store')->name('contacts.store');
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/#contact')->name('contact');
 
+Route::get('/#contact', 'ContactController@contact')->name('contact');
 
-// Route::get('/about', 'HomeController@index')->name('about');
-
-// Route::get('/#contact')->name('contact');
+Route::resource('profiles', 'ProfileController');

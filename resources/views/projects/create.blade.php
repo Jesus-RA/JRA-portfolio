@@ -3,7 +3,7 @@
 @section('content')
     <div class="container mt-5 ">
         <div class="row text-white">
-            <div class=" col-sm-12 col-md-10 col-lg-6 col-xl-6 mx-auto text-center">
+            <div class="col-sm-12 col-md-10 col-lg-6 col-xl-6 mx-auto text-center">
                 <h1 class="mb-5">Create project</h1>
                 <form
                     action="{{route('projects.store')}}"
@@ -41,7 +41,8 @@
 
                     <div class="form-group">
                         <technologies
-                            :technologies="{{ json_encode($technologies) }}"
+                            :technologies="{{ $technologies }}"
+                            current-technologies="{{ old('technologies') }}"
                         ></technologies>
                         @error('technologies')
                             <span class="invalid-feedback d-block errorSpan">
@@ -80,6 +81,16 @@
                         @enderror
                     </div>
 
+                    {{-- <div class="custom-file text-left">
+                        <input type="file" name="image[]" class="custom-file-input bg-transparent" id="customFile">
+                        <label class="custom-file-label bg-transparent @error('image') invalid-feedback @enderror" for="customFile">Choose file</label>
+                        @error('image[]')
+                            <span class="invalid-feedback d-block errorSpan">
+                                <strong>{{ $message }}</strong>
+                            </span>
+                        @enderror
+                    </div> --}}
+                    
                     <div class="form-group">
                         <span class="font-weight-bold mr-5 @error('image') text-danger @enderror">Image</span>
                         <input
@@ -96,11 +107,35 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-dark btn-block border border-secondary">Add project</button>
+                        <button
+                            type="submit"
+                            class="btn btn-outline-light btn-block border border-secondary"
+                            id="saveButton"
+                            onclick="showLoading()"
+                        >Add project</button>
+
+                        <button class="d-none btn btn-outline-light btn-block" type="button" disabled id="loadingButton">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
                     </div>
-                    
                 </form>
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        
+        function showLoading(){
+
+            let saveButton = document.getElementById('saveButton')
+            let loadingButton = document.getElementById('loadingButton')
+
+            saveButton.classList.add('d-none');
+            loadingButton.classList.remove('d-none');
+
+        }
+    </script>
 @endsection

@@ -1,22 +1,20 @@
-<div class="row my-5 myAbout">
+<div class="row {{ Request::is('/') ? 'myAbout' : 'mt-5' }}">
     <div class="col-md-6 my-auto">
         
-        <div class="col-md-12 text-white  my-5">
+        <div class="col-md-12 text-white">
             <h2 class="mb-3">About me</h2>
             
             <p class="text-justify">
-                I'am a Computer Science student and self taught web developer,
-                passionate for learn something new every day, I really enjoy learn
-                what I like!
+                {{ $profile->biography }}
             </p>
 
         </div>
 
-        <div class="col-md-12 text-white my-5">
-            @if ( count($technologies) > 0)
-                <h4>Technologies:</h4>
+        <div class="col-md-12 text-white mt-5">
+            <h4>Technologies:</h4>
+            @if ( count($profile->technologies) > 0)
                 <ul class="technologies">
-                    @foreach ($technologies as $technology)
+                    @foreach ($profile->technologies as $technology)
                     <li class="technology">
                         <img src="{{ $technology->icon->path }}" alt="{{ $technology->name }}" loading="lazy" width="30" height="30">
                         <span class="ml-3 font-weigth-bold">{{ $technology->name }}</span>

@@ -36,10 +36,35 @@
                     </div>
 
                     <div class="form-group">
-                        <button type="submit" class="btn btn-dark btn-block border border-secondary">Add Technology</button>
+                        <button
+                        type="submit"
+                        class="btn btn-outline-light btn-block"
+                        id="saveButton"
+                        onclick="showLoading()"
+                        >Add Technology</button>
+
+                        <button class="d-none btn btn-outline-light btn-block" type="button" disabled id="loadingButton">
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Loading...
+                        </button>
                     </div>
                 </form>
             </div>
         </div>
     </div>
+@endsection
+
+@section('scripts')
+    <script>
+        
+        function showLoading(){
+
+            let saveButton = document.getElementById('saveButton')
+            let loadingButton = document.getElementById('loadingButton')
+
+            saveButton.classList.add('d-none');
+            loadingButton.classList.remove('d-none');
+
+        }
+    </script>
 @endsection

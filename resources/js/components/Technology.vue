@@ -17,24 +17,20 @@
     export default {
         props: [
             'technologies',
-            'project'
+            'currentTechnologies',
         ],
         mounted(){
-
             this.getProjectTechnologies();
-
         },
-        data(techS){
+        data(){
             return {
                 technologiesSelected: new Set(),
                 selected: false,
-                projectTechs : [],
             }
         },
         methods: {
             selectTechnology(event, technology_id){
-                console.log(event.target.textContent);
-                console.log(technology_id);
+
                 if( event.target.classList.contains('active') ){
                     // Removing class from dom element
                     event.target.classList.remove('active');
@@ -52,22 +48,19 @@
             },
             getProjectTechnologies(){
                 // Only when editing some project
-                if(this.project){
+                if(this.currentTechnologies){
 
-                    // Getting technologies id belonging to the project
-                    this.projectTechs = this.project.map( tech => {
-                        return tech.id;
-                    });
-                    
-                    // Filling selected technologies 
-                    this.technologiesSelected = new Set(this.projectTechs);
-                    const stringTechnologies = [...this.technologiesSelected];
-                    document.querySelector('#technologies').value = stringTechnologies;
+                    let techs = this.currentTechnologies.split(",").map( val => parseInt(val, 10))
+
+                    this.technologiesSelected = new Set(techs)
+
+                    document.querySelector('#technologies').value = this.currentTechnologies
+
                 }
             },
             isSelected(technology_id){
                 // If the technology belongs to the project then show it as active
-                if( this.projectTechs.includes(technology_id) ){
+                if( this.technologiesSelected.has(technology_id) ){
                     return 'active'
                 }
                 return '';
