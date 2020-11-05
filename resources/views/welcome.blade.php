@@ -21,17 +21,17 @@
         </div> --}}
     </div>
     <div class="container">
-        <section id="about" class="pt-3">
+        <section id="about" class="pt-5 pt-md-0">
             @include('about')            
         </section>
 
-        <section id="portfolio" class="pt-3">
+        <section id="portfolio" class="pt-4">
             @if (count($projects) > 0)
                 @include('portfolio')
             @endif
         </section>
 
-        <section id="contact" class="pt-3">
+        <section id="contact" class="pt-4 pt-md-0">
             <contact></contact>
         </section>
 

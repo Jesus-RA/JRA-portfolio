@@ -1,4 +1,5 @@
-<div class="row {{ Request::is('/') ? 'myAbout' : 'mt-5' }}">
+{{-- <div class="row mt-4 myAbout {{ Request::is('/') ? 'myAbout' : 'mt-5' }}"> --}}
+<div class="row mt-4 myAbout">
     <div class="col-md-6 my-auto">
         
         <div class="col-md-12 text-white">
@@ -10,7 +11,7 @@
 
         </div>
 
-        <div class="col-md-12 text-white mt-5">
+        <div class="col-md-12 text-white mt-5 mb-4 mb-md-0">
             <h4>Technologies:</h4>
             @if ( count($profile->technologies) > 0)
                 <ul class="technologies">

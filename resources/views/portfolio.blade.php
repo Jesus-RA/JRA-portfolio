@@ -1,4 +1,4 @@
-<div class="row my-5">
+<div class="row my-5 mt-4">
     <h2 class="text-center mb-5 col-12">My portofolio</h2>
     @foreach ($projects as $project)
         @include('components.modal-project')

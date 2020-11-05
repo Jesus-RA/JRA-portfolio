@@ -36,8 +36,8 @@
                 <p class="card-text">
                     <strong class="text-success">Technologies: </strong>
                     @foreach ($project->technologies as $technology)
-                        <span class="text-sm border border-light rounded  text-center mr-1">
-                            <small class="px-2">{{$technology->name}}</small>
+                        <span class="badge border border-light text-center mr-1 py-1 mb-1">
+                            <small>{{$technology->name}}</small>
                         </span>
                     @endforeach
                 </p>
