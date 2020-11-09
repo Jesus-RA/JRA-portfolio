@@ -62,7 +62,7 @@ export default {
                 message : data.get('message'),
             }
             
-            if(this.validarCampos()==true){
+            if(this.validarCampos() == true){
 
                 axios.post('/contact', params)
                     .then(response => {
@@ -74,6 +74,7 @@ export default {
                         });
                         this.removeErrorClass(inputs);
                         this.makeContactOpaque();
+                        this.cleanInputs(inputs)
                     })
                     .catch(error => {
                         this.$swal({
@@ -93,7 +94,7 @@ export default {
                 this.addErrorClass(inputs)
             }
 
-            this.cleanInputs(inputs)
+            
         },
         validarCampos(){
             const inputs = document.querySelectorAll('.myForm')

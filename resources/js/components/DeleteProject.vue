@@ -3,7 +3,9 @@
         type="button"
         class="btn btn-danger"
         @click="deleteProject"
-    >Delete</button>
+    >
+        <img src="/img/icons/trash-can.svg" alt="" height="25" width="15">
+    </button>
 </template>
 
 <script>
