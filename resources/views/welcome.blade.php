@@ -10,15 +10,10 @@
                 <p class="col-md-8 col-xl-6 text-justify pl-md-0 mt-5 mb-4 mb-md-3">
                     Look at my work and get convince yourself you finally found you was looking for!
                 </p>
-                <a href="/#portfolio" class="btn btn-outline-light col-10 offset-1 offset-md-0 col-md-6 col-xl-4">Check my work!</a>
+                <a href="/#portfolio" class="btn btn-outline-light col-10 offset-1 offset-md-0 col-md-6 col-xl-4 my-work-btn">Check my work!</a>
             </div>
         </div>
-        {{-- <div class="text-hero">
-            <span class="ml-auto"> <strong>Hello, my name is</strong> </span>
-            <h1>Jesús Ramírez Alejandro</h1>
-            <h3>I am a web Developer</h3>
-            <a href="/#portfolio" class="btn btn-outline-light btn-block">Check out my work!</a>
-        </div> --}}
+
     </div>
     <div class="container">
         <section id="about" class="pt-5 pt-md-0">
