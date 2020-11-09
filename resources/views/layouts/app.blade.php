@@ -42,16 +42,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ secure_asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
 
     <!-- Styles -->
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     
     {{-- My Styles --}}
-    <link rel="stylesheet" href="{{ asset('css/styles.css') }}">
-    <link rel="stylesheet" href="{{ asset('flaticon/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('flaticon/flaticon.css') }}">
 
     @yield('styles')
 </head>
