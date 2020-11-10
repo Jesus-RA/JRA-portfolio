@@ -41824,7 +41824,7 @@ var render = function() {
       _c(
         "div",
         {
-          staticClass: "card border border-dark myCard opaque",
+          staticClass: "card border border-dark myCard",
           attrs: { id: "contactCard" }
         },
         [

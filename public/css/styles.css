@@ -103,11 +103,11 @@ input:-webkit-autofill {
 }
 
 .myCard{
-  /* opacity: 0.5; */
   padding: 50px 0;
   color: white;
   background-color: transparent;
-  transition: ease-in-out 0.4s;  
+  transition: ease-in-out 0.4s;
+  box-shadow: 0 4px 8px 0 rgba(158, 158, 158, 0.2), 0 6px 20px 0 rgba(158, 158, 158, 0.19);
 }
 
 .opaque{
@@ -184,7 +184,6 @@ html{
 .footer{
   margin-top: auto;
   background-color: rgba(0, 0, 0, 0.7);
-  /* border-top: 0.001px solid gray; */
 }
 
 html{

@@ -1,7 +1,7 @@
 <template>
     <div class="row myContact">
         <div class="col-md-10 col-lg-8 mx-auto my-auto">
-            <div class="card border border-dark myCard opaque" id="contactCard">
+            <div class="card border border-dark myCard" id="contactCard">
                 <h2 class="text-center">Get in touch</h2>
                 <p class="text-center mt-3 px-4">
                     If you have some projects you need to build, just let me know!
