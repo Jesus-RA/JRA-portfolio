@@ -205,14 +205,13 @@ body{
 }
 
 .author p{
-  color: gainsboro;
-  opacity: 0.5;
+  color: white;
+  opacity: 0.8;
   transition: 0.4s ease-in-out;
 }
 
 .author span{
-  color: gainsboro;
-  opacity: 0.8;
+  color: white;
   transition: 0.4s ease-in-out;
 }
 
