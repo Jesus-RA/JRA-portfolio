@@ -10,6 +10,10 @@ import VueSweetalert2 from 'vue-sweetalert2';
 import '../sass/_dark.scss';
 window.Vue = require('vue');
 
+// Importando AOS
+import AOS from "aos";
+import "aos/dist/aos.css";
+
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -28,7 +32,7 @@ Vue.component('contact', require('./components/Contact.vue').default);
 Vue.component('remove-project-image', require('./components/RemoveProjectImage.vue').default);
 
 // Ver los paquetes instalados
-// console.log(Vue.prototype)   
+//console.log(Vue.prototype)   
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -36,5 +40,10 @@ Vue.component('remove-project-image', require('./components/RemoveProjectImage.v
  */
 
 const app = new Vue({
+    created(){
+        AOS.init({
+            duration: 1200,
+        });
+    },
     el: '#app',
 });

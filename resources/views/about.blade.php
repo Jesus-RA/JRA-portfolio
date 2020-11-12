@@ -2,7 +2,7 @@
 <div class="row mt-4 myAbout">
     <div class="col-md-6 my-auto">
         
-        <div class="col-md-12 text-white">
+        <div class="col-md-12 text-white" data-aos="fade-up">
             <h2 class="mb-3">About me</h2>
             
             <p class="text-justify">
@@ -11,7 +11,7 @@
 
         </div>
 
-        <div class="col-md-12 text-white mt-5 mb-4 mb-md-0">
+        <div class="col-md-12 text-white mt-5 mb-4 mb-md-0" data-aos="fade-up">
             <h4>Technologies:</h4>
             @if ( count($profile->technologies) > 0)
                 <ul class="technologies">
@@ -27,7 +27,7 @@
 
     </div>
 
-    <div class="col-md-6 my-auto">
+    <div class="col-md-6 my-auto" data-aos="zoom-in-up">
         <div class="col-11 col-lg-7 text-center mx-auto">
             <div class="card myPhoto">
                 <img src="{{ secure_asset('img/me/me.jpg') }}" alt="me" loading="lazy" width="300" height="300" class="card-img-top">

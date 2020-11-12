@@ -1,5 +1,5 @@
 <template>
-    <div class="row myContact">
+    <div class="row myContact" data-aos="zoom-in-up">
         <div class="col-md-10 col-lg-8 mx-auto my-auto">
             <div class="card border border-dark myCard" id="contactCard">
                 <h2 class="text-center">Get in touch</h2>
