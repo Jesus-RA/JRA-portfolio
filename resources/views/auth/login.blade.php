@@ -50,10 +50,17 @@
                 </div> --}}
 
                 <div class="form-group">
-                    <button type="submit" class="btn btn-outline-light border border-secondary btn-block">
+                    <button type="submit" class="btn btn-outline-light border border-secondary btn-block"
+                        id="saveButton"
+                        onclick="showLoading()"
+                    >
                         {{ __('Login') }}
                     </button>
 
+                    <button class="d-none btn btn-outline-light btn-block" type="button" disabled id="loadingButton">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                        Loading...
+                    </button>
                     {{-- @if (Route::has('password.request'))
                         <a class="btn btn-link" href="{{ route('password.request') }}">
                             {{ __('Forgot Your Password?') }}
@@ -64,4 +71,19 @@
         </div>
     </div>
 </div>
+@endsection
+
+@section('scripts')
+    <script>
+        
+        function showLoading(){
+
+            let saveButton = document.getElementById('saveButton')
+            let loadingButton = document.getElementById('loadingButton')
+
+            saveButton.classList.add('d-none');
+            loadingButton.classList.remove('d-none');
+
+        }
+    </script>
 @endsection

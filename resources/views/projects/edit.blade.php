@@ -32,6 +32,7 @@
                             name="description"
                             placeholder="Description"
                             class="myForm @error('description') errorForm @enderror"
+                            style="min-height: 200px"
                         >{{ old('description') ? old('description') : $project->description }}</textarea>
                         @error('description')
                             <span class="invalid-feedback d-block errorSpan">
