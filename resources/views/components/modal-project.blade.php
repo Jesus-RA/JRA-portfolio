@@ -31,7 +31,7 @@
             <div class="modal-body">
                 <h2 class="card-title text-center">{{$project->name}}</h2>
                 <p class="card-text text-justify">
-                    {{$project->description}}
+                    {!! $project->description !!}
                 </p>
                 <p class="card-text">
                     <strong class="text-success">Technologies: </strong>
