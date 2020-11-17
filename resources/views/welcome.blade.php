@@ -3,7 +3,7 @@
 @section('content')
     <div class="hero-image">
         <div class="d-flex align-items-center h-100">
-            <div class="col-12 col-md-7 offset-md-1 fade-in-bottom">
+            <div class="col-12 col-md-7 offset-md-1">
                 <span class="d-block mb-1 text-md-left ml-2 ml-md-0"> <strong>Hello, my name is</strong> </span>
                 <h1 class="name text-md-left text-center">Jesús Ramírez Alejandro</h1>
                 <h3 class="name mb-4 text-md-left text-center">I am a Web Developer</h3>
