@@ -136,8 +136,8 @@ class ProjectController extends Controller
             );
         }
 
-        $project->fill($request->all());
-        $project->save();
+        // $project->fill($request->all());
+        $project->update($request->all());
 
         $technologies = explode(",", $request->technologies);
         $project->technologies()->sync($technologies);
