@@ -2,8 +2,9 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -31,5 +32,10 @@ class AppServiceProvider extends ServiceProvider
             'api_secret' => env('CLOUDINARY_API_SECRET', "c0xFQad1yO3XxNGbh6vexC3CFR8"),
             "secure" => true
         ));
+
+        if($this->app->environment('production')){
+            URL::forceSchema('https');
+        }
+
     }
 }
