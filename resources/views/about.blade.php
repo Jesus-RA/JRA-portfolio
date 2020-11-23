@@ -6,7 +6,7 @@
             <h2 class="mb-3">About me</h2>
             
             <p class="text-justify">
-                {{ $profile->biography }}
+                {!! $profile->biography !!}
             </p>
 
         </div>
