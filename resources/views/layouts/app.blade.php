@@ -14,7 +14,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>JRA Portfolio</title>
+    <title>{{ config('app.name', 'Jesús Ramírez Alejandro') }}</title>
     <meta name="author" content="Jesús Ramírez Alejandro">
     <meta name="description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!" />
 
@@ -47,6 +47,11 @@
     <!-- Linkedin -->
     <meta property="og:type" content="[Website]" />
     <meta name="image" property="og:image" content="[https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png]">
+
+    <link rel="canonical" href="https://www.jesusra.com/" />
+    <link rel='shortlink' href='https://www.jesusra.com/' />
+    <link rel="icon" href="https://besmit.com/wp-content/uploads/2018/10/cropped-logoSolesti-192x192.jpg" sizes="192x192" />
+    <meta name="msapplication-TileImage" content="https://besmit.com/wp-content/uploads/2018/10/cropped-logoSolesti-270x270.jpg" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
