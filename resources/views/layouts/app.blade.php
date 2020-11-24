@@ -16,17 +16,26 @@
 
     <title>{{ config('app.name', 'Jesús Ramírez Alejandro') }}</title>
     <meta name="author" content="Jesús Ramírez Alejandro">
-    <meta name="description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!" />
+    <meta name="description" 
+        content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
+        I think being better, I can contribute to the developers community and help to improve my environment." 
+    />
 
     <!-- Schema.org markup for Google+ -->
     <meta itemprop="name" content="JRA Web Developer">
-    <meta itemprop="description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!">
+    <meta itemprop="description" 
+        content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
+        I think being better, I can contribute to the developers community and help to improve my environment."
+    >
     <meta itemprop="image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="JRA Web Developer">
-    <meta name="twitter:description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!">
+    <meta name="twitter:description" 
+        content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
+        I think being better, I can contribute to the developers community and help to improve my environment."
+    >
     <meta name="twitter:creator" content="@JesusRA1P">
     <!-- Twitter summary card with large image. Al menos estas medidas 280x150px -->
     <meta name="twitter:image:src" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
@@ -36,7 +45,10 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.jesusra.com/" />
     <meta property="og:image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
-    <meta property="og:description" content="I'am a Computer Science student and self taught web developer, passionate for learn something new every day, I really enjoy learn what I like!" />
+    <meta property="og:description" 
+        content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
+        I think being better, I can contribute to the developers community and help to improve my environment."
+    />
     <meta property="og:site_name" content="JRA Web Developer" />
     <meta property="fb:app_id" content="794563961346061">
 
@@ -50,8 +62,8 @@
 
     <link rel="canonical" href="https://www.jesusra.com/" />
     <link rel='shortlink' href='https://www.jesusra.com/' />
-    <link rel="icon" href="https://besmit.com/wp-content/uploads/2018/10/cropped-logoSolesti-192x192.jpg" sizes="192x192" />
-    <meta name="msapplication-TileImage" content="https://besmit.com/wp-content/uploads/2018/10/cropped-logoSolesti-270x270.jpg" />
+    <link rel="icon" href="{{ secure_asset('img/me/me.jpg') }}" sizes="192x192" />
+    <meta name="msapplication-TileImage" content="{{ secure_asset('img/me/me.jpg') }}" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

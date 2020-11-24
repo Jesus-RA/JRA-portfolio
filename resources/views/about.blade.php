@@ -30,7 +30,7 @@
     <div class="col-md-6 my-auto" data-aos="zoom-in-up">
         <div class="col-10 col-lg-7 text-center mx-auto">
             <div class="card myPhoto">
-                <img src="{{ secure_asset('img/me/me.jpg') }}" alt="me" loading="lazy" width="300" height="300" class="card-img-top">
+                <img src="{{ secure_asset('img/me/me.jpg') }}" alt="Jesús Ramírez Alejandro" loading="lazy" width="300" height="300" class="card-img-top">
             </div>
         </div>
     </div>
