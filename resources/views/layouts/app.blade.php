@@ -23,7 +23,7 @@
     />
 
     <!-- Schema.org markup for Google+ -->
-    <meta itemprop="name" content="JRA Web Developer">
+    <meta itemprop="name" content="JesúsRA Web Developer">
     <meta itemprop="description" 
         content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
         I think being better, I can contribute to the developers community and help to improve my environment."
@@ -32,7 +32,7 @@
 
     <!-- Twitter Card data -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="JRA Web Developer">
+    <meta name="twitter:title" content="JesúsRA Web Developer">
     <meta name="twitter:description" 
         content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
         I think being better, I can contribute to the developers community and help to improve my environment."
@@ -42,15 +42,15 @@
     <meta name="twitter:image:src" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
 
     <!-- Open Graph data -->
-    <meta property="og:title" content="JRA Web Developer" />
+    <meta property="og:title" content="JesúsRA Web Developer" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.jesusra.com/" />
-    <meta property="og:image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
+    <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
     <meta property="og:description" 
         content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
         I think being better, I can contribute to the developers community and help to improve my environment."
     />
-    <meta property="og:site_name" content="JRA Web Developer" />
+    <meta property="og:site_name" content="JesúsRA Web Developer" />
     <meta property="fb:app_id" content="794563961346061">
 
     {{-- <meta property="og:image:secure_url" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png">
@@ -63,7 +63,7 @@
 
     <link rel="canonical" href="https://www.jesusra.com/" />
     <link rel='shortlink' href='https://www.jesusra.com/' />
-    <link rel="icon" href="{{ secure_asset('img/me/me.jpg') }}" sizes="192x192" />
+    <link rel="icon" href="{{ secure_asset('img/me/me270x270.jpg') }}" sizes="192x192" />
     <meta name="msapplication-TileImage" content="{{ secure_asset('img/me/me270x270.jpg') }}" />
     <meta name="thumbnail" content="{{ secure_asset('img/me/me270x270.jpg') }}" />
 
