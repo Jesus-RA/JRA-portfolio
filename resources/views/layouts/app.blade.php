@@ -64,6 +64,7 @@
     <link rel='shortlink' href='https://www.jesusra.com/' />
     <link rel="icon" href="{{ secure_asset('img/me/me.jpg') }}" sizes="192x192" />
     <meta name="msapplication-TileImage" content="{{ secure_asset('img/me/me.jpg') }}" />
+    <meta name="thumbnail" content="{{ secure_asset('img/me/me.jpg') }}" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
