@@ -46,6 +46,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.jesusra.com/" />
     <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
+    <meta property="og:image" itemprop="image" content="{{'img/me/me270x270.jpg'}}" />
     <meta property="og:description" 
         content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
         I think being better, I can contribute to the developers community and help to improve my environment."
