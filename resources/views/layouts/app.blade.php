@@ -16,6 +16,7 @@
 
     <title>{{ config('app.name', 'Jesús Ramírez Alejandro') }}</title>
     <meta name="author" content="Jesús Ramírez Alejandro">
+    <meta name="owner" content="Jesús Ramírez Alejandro" />
     <meta name="description" 
         content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
         I think being better, I can contribute to the developers community and help to improve my environment." 
@@ -63,8 +64,8 @@
     <link rel="canonical" href="https://www.jesusra.com/" />
     <link rel='shortlink' href='https://www.jesusra.com/' />
     <link rel="icon" href="{{ secure_asset('img/me/me.jpg') }}" sizes="192x192" />
-    <meta name="msapplication-TileImage" content="{{ secure_asset('img/me/me.jpg') }}" />
-    <meta name="thumbnail" content="{{ secure_asset('img/me/me.jpg') }}" />
+    <meta name="msapplication-TileImage" content="{{ secure_asset('img/me/me270x270.jpg') }}" />
+    <meta name="thumbnail" content="{{ secure_asset('img/me/me270x270.jpg') }}" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
