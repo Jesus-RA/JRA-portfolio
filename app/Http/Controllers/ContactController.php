@@ -16,7 +16,7 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-        Mail::to('jesus.raop@gmail.com')->send( new Contact($request) );
+        Mail::to('jesus.ra98@hotmail.com')->send( new Contact($request) );
 
         return response()->json(['success' => 'Mensaje enviado con exito!']);
         // return redirect()->route('contact');
