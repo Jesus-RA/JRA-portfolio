@@ -103,14 +103,17 @@ export default {
                 axios.post('/contact', params)
                     .then(response => {
 
-                        this.$swal({
-                            title : '¡Mensaje enviado!',
-                            text : '¡Gracias por contactarme, te responderé pronto!',
-                            icon : 'success',
-                            confirmButtonColor: '#6C6',
-                        });
+                        if(response.status === 200){
 
-                        this.clearInputClasses();
+                            this.$swal({
+                                title : '¡Mensaje enviado!',
+                                text : '¡Gracias por contactarme, te responderé pronto!',
+                                icon : 'success',
+                                confirmButtonColor: '#6C6',
+                            });
+                            
+                            this.clearInputClasses();
+                        }
                     })
                     .catch(error => {
                         console.log(error)

@@ -34,7 +34,8 @@ class Contact extends Mailable
      */
     public function build()
     {
-        return $this->subject('Hey! Someone is writing you from your portfolio!')
+        return $this->from('jesus.raop@gmail.com')
+                    ->subject('Hey! Someone is writing you from your portfolio!')
                     // ->view('emails.email');
                     ->markdown('emails.emailMarkdown')
                     ->with([
