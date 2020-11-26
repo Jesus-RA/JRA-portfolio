@@ -14,13 +14,13 @@
             <div class="row">
                 <div class="col-12 col-md-6 col-lg-6 mb-5">
                     <p class="card-text text-center">
-                        <strong>Name: </strong> {{$data->name}}
+                        <strong>Name: </strong> {{$name}}
                     </p>
                 </div>
                 
                 <div class="col-12 col-md-6 col-lg-6 mb-5">
                     <p class="card-text text-center">
-                        <strong>Email: </strong> {{$data->email}}
+                        <strong>Email: </strong> {{$email}}
                     </p>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                 <div class="col-12 col-sm-12 col-md-12 col-xl-12">
                     <strong class="text-center">Message: </strong> 
                     <p class="card-text">
-                        {{$data->message}}
+                        {{$message}}
                     </p>
                 </div>
             </div>
