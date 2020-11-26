@@ -24,7 +24,7 @@ Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
 Route::get('/#contact', 'ContactController@contact')->name('contact');
 
-Route::post('/contact/message', 'ContactController@store')->name('contacts.store');
+Route::post('/contact', 'ContactController@store')->name('contacts.store');
 
 Route::get('/', 'HomeController@index')->name('home');
 

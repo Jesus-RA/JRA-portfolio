@@ -100,7 +100,7 @@ export default {
             
             if( this.validateForm() ){
 
-                axios.post('/contact/message', params)
+                axios.post('/contact', params)
                     .then(response => {
 
                         this.$swal({
