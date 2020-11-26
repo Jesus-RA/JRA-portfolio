@@ -22,10 +22,11 @@ Route::post('login', 'Auth\LoginController@login')->name('login');
 // Logout route
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
+Route::get('/#contact', 'ContactController@contact')->name('contact');
+
 Route::post('/contact/message', 'ContactController@store')->name('contacts.store');
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::get('/#contact', 'ContactController@contact')->name('contact');
 
 Route::resource('profiles', 'ProfileController');
