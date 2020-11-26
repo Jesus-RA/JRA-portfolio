@@ -110,7 +110,7 @@ export default {
                             confirmButtonColor: '#6C6',
                         });
 
-                        this.clearInputClasses()
+                        this.clearInputClasses();
                     })
                     .catch(error => {
                         console.log(error)
@@ -121,6 +121,7 @@ export default {
                             confirmButtonColor: '#FF0000',
                         })
                     })
+
             }else{
                 this.$swal({
                     title : '¡Campos vacíos!',
@@ -128,7 +129,7 @@ export default {
                     icon : 'error',
                     confirmButtonColor: '#FF0000',
                 })
-                this.addErrorClass()
+                this.addErrorClass();
             }
 
             

@@ -16,13 +16,18 @@ class ContactController extends Controller
             'message' => 'required',
         ]);
 
-        Mail::to('jesus.ra98@hotmail.com')->send( new Contact($request) );
+        Mail::to('jesus.ra98@hotmail.com')->send( new Contact(
+            $request->name,
+            $request->email,
+            $request->message
+        ) );
 
-        return response('Success', 200, [ 'Content-Type' => 'javascript/text' ]);
+        return response('Success', 200)
+            ->header('Content-Type', 'text/javascript');
 
     }
 
-    public function contact(){
-        return redirect()->route('home#contact');
-    }
+    // public function contact(){
+    //     return redirect()->route('contacts');
+    // }
 }
