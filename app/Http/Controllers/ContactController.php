@@ -18,8 +18,8 @@ class ContactController extends Controller
 
         Mail::to('jesus.ra98@hotmail.com')->send( new Contact($request) );
 
-        return response()->json(['success' => 'Mensaje enviado con exito!']);
-        // return redirect()->route('contact');
+        return response('Success', 200, [ 'Content-Type' => 'javascript/text' ]);
+
     }
 
     public function contact(){

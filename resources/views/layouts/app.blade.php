@@ -63,9 +63,9 @@
 
     <link rel="canonical" href="https://www.jesusra.com/" />
     <link rel='shortlink' href='https://www.jesusra.com/' />
-    <link rel="icon" href="{{ secure_asset('img/me/me270x270.jpg') }}" sizes="192x192" />
-    <meta name="msapplication-TileImage" content="{{ secure_asset('img/me/me270x270.jpg') }}" />
-    <meta name="thumbnail" content="{{ secure_asset('img/me/me270x270.jpg') }}" />
+    <link rel="icon" href="{{ asset('img/me/me270x270.jpg') }}" sizes="192x192" />
+    <meta name="msapplication-TileImage" content="{{ asset('img/me/me270x270.jpg') }}" />
+    <meta name="thumbnail" content="{{ asset('img/me/me270x270.jpg') }}" />
 
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

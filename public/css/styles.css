@@ -102,6 +102,16 @@ input:-webkit-autofill {
   -webkit-text-fill-color: white;
 }
 
+.form-control:-webkit-autofill {
+  box-shadow: none!important;
+  -webkit-box-shadow: 0 0 0px 1000px black inset!important;
+  -webkit-text-fill-color: white;
+}
+
+.form-control:focus{
+  border-color: white;
+}
+
 .myCard{
   padding: 50px 0;
   color: white;
