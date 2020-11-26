@@ -89,7 +89,7 @@ export default {
         sendMail(){
 
             event.preventDefault();
-            
+
             this.$swal.showLoading();
 
             const params = {
@@ -100,7 +100,7 @@ export default {
             
             if( this.validateForm() ){
 
-                axios.post('/contact', params)
+                axios.post('/contact/message', params)
                     .then(response => {
 
                         this.$swal({

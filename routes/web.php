@@ -22,7 +22,7 @@ Route::post('login', 'Auth\LoginController@login')->name('login');
 // Logout route
 Route::post('logout', 'Auth\LoginController@logout')->name('logout');
 
-Route::post('/contact', 'ContactController@store')->name('contacts.store');
+Route::post('/contact/message', 'ContactController@store')->name('contacts.store');
 
 Route::get('/', 'HomeController@index')->name('home');
 
