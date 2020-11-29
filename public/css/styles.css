@@ -1,17 +1,20 @@
-/* Intentando resolver el problema del celular horizontal */
-/* small devica portrait */
-/* @media (max-width: 575.98px) {
-  .projectImage{
-    height: 250px;
-  }
-} */
+/* Phones xs landscape mode */
+@media (max-width: 575px) { 
 
-/* Small device landscape */
-/* @media (min-width: 576px) and (max-width: 991.98px){
-  .projectImage{
-    height: 150px;
+  .modalProjectImage{
+      max-height: 40vh;
   }
-} */
+
+}
+
+/* Phones sm landscape mode */
+@media (min-width: 576px) { 
+
+  .modalProjectImage{
+      max-height: 40vh;
+  }
+
+}
 
 @media (min-width: 1200px){
   .myAbout{
@@ -296,10 +299,12 @@ h1, h2{
   }
 }
 
+/* Imagenes agregadas al proyecto */
 .projectImage{
   position: relative;
 }
 
+/* Acomodar el botón para eliminar las imagenes agregadas a un proyecto */
 .projectImage .deleteButton{
   position: absolute;
   top: 0;

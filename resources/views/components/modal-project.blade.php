@@ -10,7 +10,7 @@
                                 src="{{ $image->path }}"
                                 alt="{{ $project->name }}"
                                 loading="lazy"
-                                class="d-block w-100 card-img-top projectImage"
+                                class="d-block w-100 card-img-top modalProjectImage"
                                 height="300"
                             >                
                         </div>
