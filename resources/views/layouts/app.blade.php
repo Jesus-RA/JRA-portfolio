@@ -45,7 +45,10 @@
     <meta property="og:title" content="JesúsRA Web Developer" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.jesusra.com/" />
-    <meta property="og:image:url_secure" itemprop="image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
+    <meta property="og:image" itemprop="image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
+    <meta property="og:image:secure_url" itemprop="image" content="https://res.cloudinary.com/hkzhuqcgm/image/upload/v1601007305/myportfolio_k0cgcx.png" />
+    <meta property="og:image:width" content="1015">
+    <meta property="og:image:height" content="1080">
     <meta property="og:description" 
         content="I am a Computer Science Engineering student and self-taught web developer, I'm passionate to learn every day new things and get better my knowledge.
         I think being better, I can contribute to the developers community and help to improve my environment."
