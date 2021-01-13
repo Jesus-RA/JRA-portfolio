@@ -8,7 +8,7 @@
                 <h1 class="name text-md-left text-center">Jesús Ramírez Alejandro</h1>
                 <h3 class="name mb-4 text-md-left text-center">I am a Web Developer</h3>
                 <p class="col-md-8 col-xl-6 text-justify pl-md-0 mt-5 mb-4 mb-md-3">
-                    Look at my work and get convince yourself you finally found you was looking for!
+                    Look at my work and convince yourself you finally found what you were looking for!
                 </p>
                 <a href="/#portfolio" class="btn btn-outline-light col-10 offset-1 offset-md-0 col-md-6 col-xl-4 my-work-btn">Check my work!</a>
             </div>
