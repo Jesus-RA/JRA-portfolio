@@ -26,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+
+        $projects = Project::orderBy('created_at', 'desc')->get();
         $technologies = Technology::all();
         $profile = Profile::findOrFail(1);
         
