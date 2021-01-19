@@ -81,11 +81,11 @@
     <!-- Fonts -->
 
     <!-- Styles -->
-    <link href="{{ secure_gitasset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ secure_asset('css/app.css') }}" rel="stylesheet">
     
     {{-- My Styles --}}
-    <link rel="stylesheet" href="{{ secure_gitasset('css/styles.css') }}">
-    <link rel="stylesheet" href="{{ secure_gitasset('flaticon/flaticon.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('css/styles.css') }}">
+    <link rel="stylesheet" href="{{ secure_asset('flaticon/flaticon.css') }}">
 
     @yield('styles')
 </head>
